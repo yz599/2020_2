@@ -10,7 +10,7 @@ Lecture 2 Decision tree learning and Review of probability
 ### 1.1 Function approximation 
 ![](.ML_images/f2be7722.png)
 
-Take decision tree as an example
+<Take decision tree as an example
 
 ![](.ML_images/39a9bf78.png)
 #### 1.1.1 Search and optimization - Free lunch therom
