@@ -37,13 +37,22 @@ Lecture 2 Decision tree learning and Review of probability
 
 <font color='red'>Joint probability</font>  
 ![](.ML_images/72a180c1.png)  
+
 <font color='red'>Conditional Probability  
 ![](.ML_images/3e540a87.png) 
 ![](.ML_images/77f6f684.png) 
 
+<font color='red'>Marginal Probability</font>   
+The marginal probability P(X) is computed by summing (or integrating) the joint probability over other variables.
+![](https://miro.medium.com/max/1400/1*l_fRRvAVcm6ueQ8STOhxUA.jpeg)
+
+In many ML problems, we build a **joint distribution model** for all the variables. Once it is modeled, we can inference the probability of a single or a subset of variables (p(x₁) or p(x₁, x₂, x₃)) by summing or integrating over the rest of the variables.  
+
+![](https://miro.medium.com/max/1400/1*r02pso6WHFOa2UoFZfMbiw.jpeg)
+
 <font color='red'>Bayes' Rule  
 ![](.ML_images/3ce444f9.png)
-
+![](https://miro.medium.com/max/1400/1*a1q29H0SfIAfC7Ozub8XrA.jpeg)
 ![](.ML_images/c99396e9.png)    
 
 <font color='green'>B is the features of Decision tree  
@@ -55,6 +64,9 @@ Lecture 2 Decision tree learning and Review of probability
 ![](.ML_images/ea0374d7.png)
 
 
+##### Beta distribution
+
+
 ---
 Independent Events -- Joint distribution
 ![](.ML_images/b9c21d1d.png)
@@ -63,17 +75,22 @@ Independent Events -- Joint distribution
 #### 1.1.3 Entropy
 [Here is the reference](https://medium.com/@jonathan_hui/machine-learning-summary-fundamental-6562ff7448a)  
 
-|   |   |
+| Name  |Formula   |
 |---|---|
 | Information of an event   |  I(x) = -log(p(x)) |
 | Entropy of a random variable   |![](https://miro.medium.com/max/700/1*ISBA6bFbft3RgSgk8hAFaw.jpeg)|
 |  Cross entropy H(P,Q) |![](https://miro.medium.com/max/700/1*J7Q93nEPvsgo0K5fhJMPZQ.png)  |
-|KL Divergence |![](https://miro.medium.com/max/700/1*o-pPUakkB3-axXEviqsreg.jpeg) |
+|KL Divergence |![](https://miro.medium.com/max/700/1*o-pPUakkB3-axXEviqsreg.jpeg) ![](.ML_images/ad94a2c2.png)|
 |Conditional entropy|![](https://miro.medium.com/max/1400/1*Fkcmkzp1uoML3fujNf2gYA.jpeg)|
 |Information gain |![](https://miro.medium.com/max/1400/1*zc-hk1AKkKOwxvIS9TopZw.jpeg)|
 
 ![](https://miro.medium.com/max/1400/1*WMMz5lEbZEowSWoPJ0eR6w.jpeg)
 ![](https://miro.medium.com/max/1400/1*CICgG0p9CUKKgB__eXmj7A.jpeg) 
+
+- <font color='red'>Cross entropy=conditional entropy
+- <font color='red'>Information gain=KL Divergence （In decision tree）  
+
+
 ---
  
 The Shannon **information content** is the amount of information gain when **an event x occurs**. Mathematically, it is defined as:  
@@ -121,7 +138,7 @@ The conditional entropy H(Y|X) is the entropy of Y given X is known. If Y can be
 
 ![](.ML_images/ea24b30f.png)
 
-#### <font color='red'>**Information gain I(X,Y)**
+#### <font color='red'>**Information gain I(X,Y)- mutual information**
 Mutual information (or Information gain) I(X; Y) is the information obtained on the random variable X when Y is observed.
 
 ![](https://miro.medium.com/max/1400/1*zc-hk1AKkKOwxvIS9TopZw.jpeg)
@@ -131,3 +148,12 @@ Mutual information (or Information gain) I(X; Y) is the information obtained on 
  
 Information Gain is the expected reduction in entropy of target variable Y for data sample S, due to sorting on variable A
 ![](.ML_images/2a322803.png)
+
+
+Intuitively, mutual information measures how much information do we gain by knowing Y? 
+- If knowing Y gives us all the information about X, the conditional entropy H(X|Y) is zero because there is no more information we needed on X. The mutual information I becomes H(X) (or H(Y)).For example, if we know the label (Y) of an object, we gain a lot of information about its raw image (X). 
+We should not mistake its picture with other objects. Therefore the information gain I(X;Y) is high. 
+
+Let’s visualize this with sets. The mutual information is its overlap.
+![](https://miro.medium.com/max/1400/1*ORqXN86SlaUSfjNvob-xSg.jpeg)
+
