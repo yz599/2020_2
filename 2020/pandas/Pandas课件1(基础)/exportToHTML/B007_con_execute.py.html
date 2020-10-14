@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>B007_con_execute.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+B007_con_execute.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">pandas </span><span class="s0">as </span><span class="s1">pd</span>
+<span class="s0">from </span><span class="s1">sqlalchemy </span><span class="s0">import </span><span class="s1">create_engine</span>
+
+
+<span class="s1">con = create_engine(</span>
+    <span class="s2">&quot;mysql+pymysql://root:admin123@localhost/sales2020&quot;</span>
+<span class="s1">)</span>
+
+<span class="s3"># 执行sql: 增(insert)/删(delete)/改(update)操作</span>
+<span class="s1">con.execute(</span><span class="s2">&quot;insert into jd values ('aaa','2020-3-1',100)&quot;</span><span class="s1">)</span>
+<span class="s1">con.execute(</span><span class="s2">&quot;delete from jd where volume = 100&quot;</span><span class="s1">)</span>
+<span class="s1">con.execute(</span><span class="s2">&quot;update jd set volume = 1000 where goods_id = 'UQNA9200'&quot;</span><span class="s1">)</span>
+
+<span class="s1">con.execute(</span><span class="s2">&quot;update school.students set 成绩=10 where id=1&quot;</span><span class="s1">)</span>
+</pre>
+</body>
+</html>
