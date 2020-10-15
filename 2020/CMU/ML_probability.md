@@ -29,3 +29,11 @@ e.g., P(W=rich | G = female, H = 40.5)= ![](.ML_probability_images/8da29a62.png)
 
 #### 2.1.1 How to find the joint distribution - MLE/MAP
 
+[Reference](https://towardsdatascience.com/bayesian-inference-intuition-and-example-148fd8fb95d6)  
+
+- The core of Bayesian Inference is to combine two different distributions (likelihood and prior) into one “smarter” distribution (posterior). 
+- Posterior is “smarter” in the sense that the classic maximum likelihood estimation (MLE) doesn’t take into account a prior. Once we calculate the posterior, we use it to find the “best” parameters and the “best” is in terms of maximizing the posterior probability, given the data. 
+- This process is called Maximum A Posteriori (MAP). The optimization used in MAP is the same as the one used in typical machine learning, such as gradient descent or Newton’s method, etc.
+
+cost function _ MAP _ corss entropy (KL-divergence)
+
