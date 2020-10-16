@@ -29,7 +29,7 @@ e.g., P(W=rich | G = female, H = 40.5)= ![](.ML_probability_images/8da29a62.png)
 
 #### 2.1.1 How to find the joint distribution - MLE/MAP
 
-[Reference](https://towardsdatascience.com/bayesian-inference-intuition-and-example-148fd8fb95d6)  
+
 <font color='red'>**Cost function_ corss entropy (KL-divergence) _ MAP _MLE**
 - The core of Bayesian Inference is to combine two different distributions (likelihood and prior) into one “smarter” distribution (posterior). 
 - Posterior is “smarter” in the sense that the classic maximum likelihood estimation (MLE) doesn’t take into account a prior. Once we calculate the posterior, we use it to find the “best” parameters and the “best” is in terms of maximizing the posterior probability, given the data. 
@@ -38,10 +38,11 @@ e.g., P(W=rich | G = female, H = 40.5)= ![](.ML_probability_images/8da29a62.png)
 
 
 ##### MLE and MAP
+[Reference](https://towardsdatascience.com/bayesian-inference-intuition-and-example-148fd8fb95d6)  
 [Reference1](https://wiseodd.github.io/techblog/2017/01/01/mle-vs-map/)  
-[Reference2](https://miro.medium.com/max/1400/1*Y5NJF_SyPD3ogYfWDSz1GQ.png)
+[Reference2](https://medium.com/@jonathan_hui/machine-learning-summary-fundamental-6562ff7448a)
+![](https://miro.medium.com/max/1400/1*e4YsqAyFBEa_MuXkC3rmXw.jpeg)
 
-![](https://miro.medium.com/max/1400/1*Y5NJF_SyPD3ogYfWDSz1GQ.png)
 
 - MLE  
 <font color='red'>likelihood function P(X|θ)  
@@ -67,10 +68,31 @@ if we use the simplest prior in MAP estimation, like a uniform prior,
 
 **If we use different prior, say, a Gaussian, then our prior is not constant anymore, 
 as depending on the region of the distribution, the probability is high or low, never always the same.**
+
+
+<font color='red'> Prior p(θ) turns into an L2-regularization term in the objective function </font>  
+  
+  
+  
+If we assume the model parameters θ are zero centered, and p(θ) and p(y|θ) are both Gaussian distributed, 
+we can prove that MAP arrives with the same objective as using L2 as the cost function with added L2 regularization.
+
+![](https://miro.medium.com/max/1400/1*YXrfEY5Tm1I6N71Xf8eTDw.jpeg)  
+
+Conceptually, p(θ) can be viewed as a regularization factor. 
+It can penalize a cost function if θ deviates from our prior belief. 
+
+![](https://miro.medium.com/max/1400/1*huHAsc8B47cnKpimGSVtlQ.jpeg)    
+
+To make a new prediction, we use the posterior p(θ | X, y) in our training as p(θ). Then we find the marginal probability p(y₀|x₀) by integrating over θ. This is Marginal inference. 
+We compute the probability of a variable by summing everything else out.
+
+
+
 ---
 ##### Bayesian inference
 [Reference](https://github.com/yz599/2020_2/blob/master/2020/CMU/Bayesian%20Inference%20example.ipynb)
-
+![](https://miro.medium.com/max/1400/1*Y5NJF_SyPD3ogYfWDSz1GQ.png)
 ![](.ML_probability_images/d6636b73.png)
 
 
@@ -85,8 +107,17 @@ as depending on the region of the distribution, the probability is high or low, 
 - Because we incorporated more information through sampling, 
 the range of possible parameters is now narrower.   
 - The more data you gather, the graph of the posterior will look more like that of the **likelihood and less like that of the prior**.
-- In other words, as you get more data, the **original prior distribution matters less**.  
+- In other words, as you get more data, the **original prior distribution matters less**. 
 
+#### 2.1.2 Cross entropy- cost function - MLE/MAP 
+
+
+
+
+#### 2.1.3 Conjugate prior
+[Reference](https://medium.com/@jonathan_hui/machine-learning-summary-fundamental-6562ff7448a)
+
+![](https://miro.medium.com/max/2000/1*zC1YEmJuTfnpK2cl9ZbTpw.jpeg)
 
 
 
