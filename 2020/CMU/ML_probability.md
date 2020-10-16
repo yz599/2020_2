@@ -30,12 +30,12 @@ e.g., P(W=rich | G = female, H = 40.5)= ![](.ML_probability_images/8da29a62.png)
 #### 2.1.1 How to find the joint distribution - MLE/MAP
 
 [Reference](https://towardsdatascience.com/bayesian-inference-intuition-and-example-148fd8fb95d6)  
-
+<font color='red'>**Cost function_ corss entropy (KL-divergence) _ MAP _MLE**
 - The core of Bayesian Inference is to combine two different distributions (likelihood and prior) into one “smarter” distribution (posterior). 
 - Posterior is “smarter” in the sense that the classic maximum likelihood estimation (MLE) doesn’t take into account a prior. Once we calculate the posterior, we use it to find the “best” parameters and the “best” is in terms of maximizing the posterior probability, given the data. 
 - This process is called Maximum A Posteriori (MAP). The optimization used in MAP is the same as the one used in typical machine learning, such as gradient descent or Newton’s method, etc.
 
-<font color='red'>**Cost function_ corss entropy (KL-divergence) _ MAP _MLE**
+
 
 ##### MLE and MAP
 [Reference1](https://wiseodd.github.io/techblog/2017/01/01/mle-vs-map/)  
@@ -67,19 +67,27 @@ if we use the simplest prior in MAP estimation, like a uniform prior,
 
 **If we use different prior, say, a Gaussian, then our prior is not constant anymore, 
 as depending on the region of the distribution, the probability is high or low, never always the same.**
-
+---
 ##### Bayesian inference
+[Reference](https://github.com/yz599/2020_2/blob/master/2020/CMU/Bayesian%20Inference%20example.ipynb)
 
 ![](.ML_probability_images/d6636b73.png)
 
 
-|   |Example   |  
-|---|---|
-| P(θ): | say 400 out 2000 claps --- your guess based on one observation --- Beta distribution  ![](.ML_probability_images/b3db0a8a.png)  |
+|   |Example   |  |
+|---|---|---|
+| P(θ): | say 400 out 2000 claps --- your guess based on one observation --- Beta distribution  ![](.ML_probability_images/b3db0a8a.png)  |The clapping probability for the prior was 20%. 400/2000|
 | P(XIθ)| ![](.ML_probability_images/986dbfb1.png)  |
-| P(θIX)| posterior = likelihood * prior  |
-|X|![](.ML_probability_images/5e89e5ea.png)|
+| P(θIX)| posterior = likelihood * prior  |Now, the posterior has its peak around 0.25%.|
+|X|![](.ML_probability_images/5e89e5ea.png)|The clapping probability for the data was given as 30%.|
 
 ![](.ML_probability_images/790fe553.png)
+- Because we incorporated more information through sampling, 
+the range of possible parameters is now narrower.   
+- The more data you gather, the graph of the posterior will look more like that of the **likelihood and less like that of the prior**.
+- In other words, as you get more data, the **original prior distribution matters less**.  
+
+
+
 
 
