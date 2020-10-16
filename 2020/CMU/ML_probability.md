@@ -68,6 +68,18 @@ if we use the simplest prior in MAP estimation, like a uniform prior,
 **If we use different prior, say, a Gaussian, then our prior is not constant anymore, 
 as depending on the region of the distribution, the probability is high or low, never always the same.**
 
+##### Bayesian inference
 
+![](.ML_probability_images/d6636b73.png)
+
+
+|   |Example   |  
+|---|---|
+| P(θ): | say 400 out 2000 claps --- your guess based on one observation --- Beta distribution  ![](.ML_probability_images/b3db0a8a.png)  |
+| P(XIθ)| ![](.ML_probability_images/986dbfb1.png)  |
+| P(θIX)| posterior = likelihood * prior  |
+|X|![](.ML_probability_images/5e89e5ea.png)|
+
+![](.ML_probability_images/790fe553.png)
 
 
