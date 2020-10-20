@@ -41,11 +41,13 @@ object's internal representation as well as the methods and operations it suppor
 instance of an object is created, its identity and type cannot be changed.
 
 #### 1.1 Compare with Variable in C
-|   |   |   |   |   |
+| #  | Meaning  |   |   |   |
 |---|---|---|---|---|
 | ![](.Python_variable_images/cb643ecd.png)    | ![](.Python_variable_images/ee306e53.png)  | ![](.Python_variable_images/40ff7cb4.png)  |![](.Python_variable_images/0f629bc4.png)  | ![](.Python_variable_images/c506668b.png)  |
 | ![](.Python_variable_images/1f056061.png)  | ![](.Python_variable_images/51668e0c.png)  | ![](.Python_variable_images/1ba7d512.png)  | ![](.Python_variable_images/8e0e59c8.png)  |![](.Python_variable_images/ed0e1c4d.png)   |
-|   |   |   |   |   |
+| C  | It means that **x is the memory location**, not just a name for it.  |The variable x is mutable | y=x  |This code creates a new box called y and copies the value from x into the box!   |
+|Python| x points to a reference to an object and does not own the memory space as before|Each object in Python has **a type, a value, and an identity**. _type()/==/id()..is.._|y=x|<font color='red'>Now you can see that a new Python object has not been created, just a new name that points to the same object.![](.Python_variable_images/05920918.png) |
+
 Instead of x owning the block of memory where the value 2337 resides, the newly created Python object owns the memory where 2337 lives. 
 
 This diagram helps illustrate that x points to a reference to an object and doesn’t own the memory space as before. 
