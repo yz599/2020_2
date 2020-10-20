@@ -89,7 +89,7 @@ Independent Events -- Joint distribution
 
 - <font color='red'>Cross entropy=conditional entropy
 - <font color='red'>Information gain=KL Divergence （In decision tree）  
-
+![](.ML_images/faa582f0.png)
 
 ---
  
@@ -143,10 +143,24 @@ Mutual information (or Information gain) I(X; Y) is the information obtained on 
 
 ![](https://miro.medium.com/max/1400/1*zc-hk1AKkKOwxvIS9TopZw.jpeg)
 
+<font color="red"> Use KL-divergence for mutual information gain </font>
+
+![](.ML_images/53e1bf68.png)
+
+![](.ML_images/a12c1007.png)  
+
+
+>**A could be seen as the features of the decision tree**
+
+**Example**  
+
 ![](.ML_images/9fe260b2.png)
+
+
 
  
 Information Gain is the expected reduction in entropy of target variable Y for data sample S, due to sorting on variable A
+  
 ![](.ML_images/2a322803.png)
 
 
