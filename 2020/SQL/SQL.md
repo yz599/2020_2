@@ -1,5 +1,6 @@
 ## SQL enables us to pull data from many sources
 ![](.SQL_images/5495ec18.png)
+![](.SQL_images/e0d966ea.png)
 ---
 
 In many real-word situations, data is spread across many sources. 

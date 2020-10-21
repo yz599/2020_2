@@ -1,4 +1,5 @@
 ##Data types and structures
+
 ![](.python_built_in_images/af2d9fee.png)
 ### 1. Operations common to all data type
 - ![](.python_built_in_images/f80e2e07.png)
