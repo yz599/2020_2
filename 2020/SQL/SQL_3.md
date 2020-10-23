@@ -1,13 +1,12 @@
 ## Creat new column - group
-![](.SQL_3_images/76d1aa7d.png)
+[Reference](https://app.dataquest.io/m/254/group-summary-statistics/1/introduction)
+  
+  ![](.SQL_3_images/76d1aa7d.png)
 ![](.SQL_3_images/1f45ad56.png)
 
 ### Question
 1. Create new column based on other columns - CASE
 2. The total number of people employed in each major category 
-
-
-
 
 
 #### CASE - continous to discrete
