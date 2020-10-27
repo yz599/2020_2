@@ -57,9 +57,15 @@ information_schema has **multiple tables** you can query with the known SELECT *
 
 - tables: information about all tables in your current database
 - columns: information about all columns in all of the tables in your current database
-....
+  
+  ....
 #### 2.1 information_schema.tables
-table_schema:  
-table_name:  
-![](.SQL_server_images/264aaded.png)
+**table_schema:  
+table_name:**  
 
+![](.SQL_server_images/78bd0a06.png)
+![](.SQL_server_images/a257e648.png)
+
+---
+![](.SQL_server_images/2c363d85.png)
+![](.SQL_server_images/2eb9522f.png)
