@@ -50,6 +50,11 @@ It defines how the data will be stored in a secondary storage.
 This schema defines all the _logical constraints_ that need to be applied on the data stored. 
 It defines tables, views, and integrity constraints.
 
+#### 1.2 Integrity constraints
+- Attributes constraints : data type on columns
+- key constraints :primary key
+- referential integrity constraints : foreigh keys
+![](.SQL_server_images/a23c2dba.png)
 
 ### 2. Information_schema 
 is a **meta-database** that holds information about your current database. 
