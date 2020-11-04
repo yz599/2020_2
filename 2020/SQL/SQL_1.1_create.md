@@ -13,9 +13,11 @@
 1. Create table  ![](.SQL_1.1_create_images/65e5bb43.png)  
 Delete table ![](.SQL_1.1_create_images/986a5370.png)
 
-1.1 Data type- alter datatype after table creation
+1.1 Data type- alter datatype after table creation  
+
 ![](.SQL_1.1_create_images/a32036ce.png)
-1.2 Cast![](.SQL_1.1_create_images/63a349d2.png)
+1.2 Cast  
+![](.SQL_1.1_create_images/63a349d2.png)
 ---
 2. Alter table  --- alter column..  
 2.1 add col![](.SQL_1.1_create_images/c98c667a.png)  
