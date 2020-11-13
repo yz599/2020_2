@@ -7,12 +7,15 @@ This notes discussed the NN from three different perspectives
 
 ![](.Neural_net_work_images/fa25f84b.png)
 
-## 1. Liner regression
+## 1. Linear regression
 ![](.Neural_net_work_images/606b2866.png)
 ![](.Neural_net_work_images/175201d6.png)
 ![](.Neural_net_work_images/270f5bf5.png)
 ![](.Neural_net_work_images/c75556be.png)
 
+![picture 1](../../images/a4576f84b140f840baa39243f911e2616379bf76f21fb9d4fe88ed9e3ae5dd18.jpg)  
+
+![picture 2](../../images/960da22eee12f7570431c03f2812e3aae3ac637fb72d4518ba7399a1baa40368.png)  
 
 ## 2. Logistic regression
 
