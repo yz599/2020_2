@@ -1,4 +1,4 @@
-# #1. Linear algebra
+# 1. Linear algebra
 ###  1.1 Dot product
 - dimensional analysis (distance to boundary)
 - similarity/closeness
@@ -25,7 +25,7 @@
 
 - n*m 的几何意义是将m维空间（输入空间）映射到n维空间（输出空间）上
   - >注意这里的输入空间，输出空间的概念，阅读方向同样也是从右向左的（靠右的是输入，靠左的是输出）
-_**两个矩阵相乘的意义是将右边矩阵中的每一列向量 [公式] 变换到左边矩阵中以每一行行向量为基所表示的空间中去。也就是说一个矩阵可以表示一种线性变换**_
+_**两个矩阵相乘的意义是将右边矩阵中的每一列向量变换到左边矩阵中以每一行行向量为基所表示的空间中去。也就是说一个矩阵可以表示一种线性变换**_
 
 矩阵的行是这个变换的输出空间维数，而列是变换的输入空间维数。矩阵乘法从右向左读，第一个变换的 
 M2 的输出向量的维度（M2的行）必须和第二个变换 M1的输入向量（M1的列）维度相等，才可以计算。也就是说，类似于插头和插座的关系，我只有三头插座，你来一个双头插头肯定没法用的.  
@@ -42,7 +42,7 @@ M2 的输出向量的维度（M2的行）必须和第二个变换 M1的输入向
 ##### Eigenvector and eigen value of the _**matrix**_ - remain in the original span   
 
 
-In linear algebra, an eigenvector (/ˈaɪɡənˌvɛktər/) or characteristic vector of a linear transformation is a nonzero vector that changes by a scalar factor when that linear transformation is applied to it.
+In linear algebra, an eigenvector or characteristic vector of a linear transformation is a nonzero vector that changes by a scalar factor when that linear transformation is applied to it.
 
 在变换的过程中，空间内大部分的向量都离开了它所张成的空间（即这个向量原点到终点构成的直线） ，还有一部分向量留在了它所张成的空间，矩阵对它仅仅是拉伸或者压缩而已，如同一个标量。
 
@@ -90,7 +90,7 @@ PCA is defined as an **orthogonal linear transformation** that transforms the da
 
 ![picture 34](../../images/8e853b383cbd0a3e0d45567eef0e0cf836768b3f06819c65419c5cccd8505bcc.png)  
 
-#### 1.3.2 pca:
+#### 1.3.2 PCA:
 
 
 设原始数据矩阵 X 对应的协方差矩阵为 C，而 P 是一组基按行组成的矩阵，设 Y=PX，则 Y 为 X 对 P 做基变换后的数据。设 Y 的协方差矩阵为 D，我们推导一下 D 与 C 的关系：  
@@ -103,6 +103,9 @@ PCA is defined as an **orthogonal linear transformation** that transforms the da
  ![picture 39](../../images/d2c4b4e2feb31fda707c1d7a2b11022c1558d15236936062458ab3aaabb411c5.png)  
 
  ![picture 42](../../images/3a0242053b517ee5d731f6b41f753fd8f8f2956e22a9c8eb44593a8b41c7aec1.png)  
+ 
+## 1.4 [Regularization](https://charlesliuyx.github.io/2017/10/03/%E3%80%90%E7%9B%B4%E8%A7%82%E8%AF%A6%E8%A7%A3%E3%80%91%E4%BB%80%E4%B9%88%E6%98%AF%E6%AD%A3%E5%88%99%E5%8C%96/)
+
  
 
 
