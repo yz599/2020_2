@@ -64,7 +64,7 @@ In linear algebra, an eigenvector (/ˈaɪɡənˌvɛktər/) or characteristic vec
 - Linear transform by change basis of vector to eigenvectors  
      The **same linear transform** of **the same vector** that represented by different base![picture 32](../../images/0cfa06a023c9d50df0de7c326862fff158a8e7aa0a889ca5e24fe03b272b9a86.png)  
      ![picture 33](../../images/e3f10ffb0b875438569b558a54100e816acf96e2c3cc345525e4bd09c80dd5cb.png)  
-- Principal component analysis of X - diagonalization of covariance matrix
+- Principal component analysis of X - diagonalization of covariance matrix - orthogonal linear transform
 
 ### 1.3 [PCA](https://zhuanlan.zhihu.com/p/77151308) 
 - linear transform (rotate) the original dataset **Y=PX**  
