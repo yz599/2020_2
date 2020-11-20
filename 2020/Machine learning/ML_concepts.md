@@ -39,7 +39,11 @@ High-variance machine learning algorithms include:
 ### 1.2 Gradient descent
 - **Target**: find **theta** to minimize value of cost function  ![picture 8](../../images/1f414a3db11ba47069131ae8b877d90cf5b5f7a26b32868ab3903fe7a57403de.png)  
 
-- **How**: move theta in a specific direction [gradient] to efficiently minimize loss function  
+- **How**: move theta in a specific direction [gradient] to efficiently minimize loss function **from initial position**
+- The gradient of z can be thought of the way (vector) to go towards the maxima/minima  
+  
+![picture 49](../../images/de86d5d51416a6154ae8bc27e2e5a7be8067be69c7583b3bd8cdb2375576ed7d.png)  
+
 - [**Implement**](https://www.geeksforgeeks.org/ml-stochastic-gradient-descent-sgd/?ref=rp):  
 [Three variants of GD](https://www.geeksforgeeks.org/ml-mini-batch-gradient-descent-with-python/?ref=rp)
   - [Batch Gradient Descent](https://ruder.io/optimizing-gradient-descent/index.html#gradientdescentvariants)

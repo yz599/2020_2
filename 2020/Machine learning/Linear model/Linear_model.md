@@ -58,21 +58,7 @@ Solutions:
 #### 1.3.2 L1/L2 regularization and PCA
 
 
-## 2. Locally Weighted Regression
 
-
-- How many neibors to allow to influence a test point?
-- A way to give larger weights to closer points. **Gaussian similarity metric**
-![picture 45](../../images/9fd0bd980ad064ebe0feb8c25f3c21bbc6d63b806c506094f5fb981d15ddc1d9.png)  
-
-- **Loss function**: find theta minimize the locally weighted sum of squared residuals to the **sample x**
-![picture 46](../../images/7243886e758ac1ff8fb8ebc2414cf40c367f9a2046196ca70bdcc3bf80026549.png)  
-
-- Rewrite the weights into diagonal matrix   
-  ![picture 47](../../images/3ab4f72e779b756c0942b8a8958d0826334d29177f70cbd7942799bfc8775c8d.png)  
-
-- Taking the **derivative**   
-  ![picture 48](../../images/1832ca40ecaec2122f8670316a495ece53704f21a6123aa7c2aafc6c0a351a39.png)  
-
+   
 
 
