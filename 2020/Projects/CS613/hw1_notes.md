@@ -56,3 +56,9 @@ y = y[perm]
 
 ### [5. Create array](https://numpy.org/doc/stable/reference/routines.array-creation.html)
 
+### 6. Locally weighted LR - instance based model
+- could be seen as modified linear regression 
+- the loss function (distance sum) is modified by assign more weight to the nearest datapoints
+- one prediction needs **all instances** 
+
+
