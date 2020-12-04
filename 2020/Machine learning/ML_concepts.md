@@ -18,9 +18,10 @@ High-Bias: Suggests more assumptions about the form of the target function
 **Variance error**: 
 Variance is the amount that the estimate of the target function will change if different training data was used. 
 
-High Variance: Suggests large changes to the estimate of the target function with changes to the training dataset.
+**High Variance:** Suggests large changes to the estimate of the target function with changes to the training dataset.
 >Overfitting (High variance)
 
+![](.ML_concepts_images/3165f524.png)  
 
 Low-variance machine learning algorithms include:
 - Linear Regression, 
@@ -34,26 +35,53 @@ High-variance machine learning algorithms include:
 
 ### 1.1.2 Prevent overfitting
 #### Cross validation
-#### Regularization
+#### [Regularization](https://charlesliuyx.github.io/2017/10/03/%E3%80%90%E7%9B%B4%E8%A7%82%E8%AF%A6%E8%A7%A3%E3%80%91%E4%BB%80%E4%B9%88%E6%98%AF%E6%AD%A3%E5%88%99%E5%8C%96/)
+- Regularization applies to **objective functions** in ill-posed optimization problems.
+- Won't impact the 
+- The regularization term, or penalty, imposes a cost on the 
+optimization function for overfitting the function or to find an optimal solution.  
 
+[Other regularization](https://en.wikipedia.org/wiki/Regularization_(mathematics)#Classification)
 ![picture 3](../../images/fb23b13f94a92b1dbf58cf9c0493063ef4daccd92903c0339331e87f5f013ff4.png)  
 
 ## 1.2 Gradient descent
-[Optimization](https://ruder.io/optimizing-gradient-descent/)
-- **Target**: find **theta** to minimize value of cost function  ![picture 8](../../images/1f414a3db11ba47069131ae8b877d90cf5b5f7a26b32868ab3903fe7a57403de.png)  
-
-- **How**: move theta in a specific direction [gradient] to efficiently minimize loss function **from initial position**
-- The gradient of z can be thought of the way (vector) to go towards the maxima/minima  
-  
+### 1.2.1 [Optimization](https://ruder.io/optimizing-gradient-descent/)
+- **Target**: find **theta** to minimize value of cost function   
+- **Why**: Minimize loss function
 ![picture 49](../../images/de86d5d51416a6154ae8bc27e2e5a7be8067be69c7583b3bd8cdb2375576ed7d.png)  
+### 1.2.2 How
+- **How**: move **theta** in a specific direction [gradient] to efficiently minimize loss function **from initial position**  
+
+  - **loss function** - minimize
+  - **gradient** of loss function
+    - training data
+    - ethta
+  - **learning rate** speed/(-)direction
+  - **Initializing ethta** High position
+  - **Relationship between each iteration**  
+  > <font color='red'>_**ethta1 - ethta2= lr*gradient@ethta1**_</font>
+  ![picture 8](../../images/1f414a3db11ba47069131ae8b877d90cf5b5f7a26b32868ab3903fe7a57403de.png) 
+[Reference](https://towardsdatascience.com/implement-gradient-descent-in-python-9b93ed7108d1)
+![](.ML_concepts_images/4575c2c2.png)
+### 1.2.3 Normalization                                                                                                                                                                                                                                                                                                                                                                  
+![](.ML_concepts_images/f025ba49.png)                                                                                                                                                                                                                                                                                                                                                                  
+Now that we can compute the gradient of the loss function, the procedure of **repeatedly evaluating 
+the gradient** and then performing a parameter update is called Gradient Descent. [Reference](https://cs231n.github.io/optimization-1/)
 
 - [**Implement**](https://www.geeksforgeeks.org/ml-stochastic-gradient-descent-sgd/?ref=rp):  
 [Three variants of GD](https://www.geeksforgeeks.org/ml-mini-batch-gradient-descent-with-python/?ref=rp)
-  - [Batch Gradient Descent](https://ruder.io/optimizing-gradient-descent/index.html#gradientdescentvariants)
-  - Stochastic Gradient Descent
-  - [Mini-batch Gradient Descent](https://www.geeksforgeeks.org/ml-mini-batch-gradient-descent-with-python/?ref=rp)
-
->Gradient is a function of obervation....
+  - [**Batch Gradient Descent**](https://ruder.io/optimizing-gradient-descent/index.html#gradientdescentvariants)
+  - **Stochastic Gradient Descent**- one random sample
+  
+     The extreme case of this is a setting where the mini-batch contains only a single example. 
+     This process is called Stochastic Gradient Descent (SGD) (or also sometimes on-line gradient descent).
+      
+  - [**Mini-batch Gradient Descent**](https://www.geeksforgeeks.org/ml-mini-batch-gradient-descent-with-python/?ref=rp)  
+    Performs an update for every mini-batch of n training examples:
+    >The size of the mini-batch is a hyperparameter but it is not very common to cross-validate it.   
+                                                                                                                                                                                               
+                                                                                                                                                                                               
+![](.ML_concepts_images/1b843166.png)
 
 |   |   |   |
 |---|---|---|
