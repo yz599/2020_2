@@ -56,20 +56,25 @@ optimization function for overfitting the function or to find an optimal solutio
   - **gradient** of loss function
     - training data
     - ethta
+    ![](.ML_concepts_images/e693ea8e.png)
   - **learning rate** speed/(-)direction
   - **Initializing ethta** High position
-  - **Relationship between each iteration**  
-  > <font color='red'>_**ethta1 - ethta2= lr*gradient@ethta1**_</font>
-  ![picture 8](../../images/1f414a3db11ba47069131ae8b877d90cf5b5f7a26b32868ab3903fe7a57403de.png) 
-[Reference](https://towardsdatascience.com/implement-gradient-descent-in-python-9b93ed7108d1)
-![](.ML_concepts_images/4575c2c2.png)
+  - **Relationship between each iteration**  站在上一个点 求导和往下走
+  <font color='red'>_**ethta2= **ethta1** -lr*gradient@**ethta1**_</font>  
+  ![](.ML_concepts_images/4575c2c2.png)
+  [Reference](https://towardsdatascience.com/implement-gradient-descent-in-python-9b93ed7108d1)                                                                                                                                                                                                                                                                                                                                                    
+
+#### **Explanation of N in the equation**  
+![picture 8](../../images/1f414a3db11ba47069131ae8b877d90cf5b5f7a26b32868ab3903fe7a57403de.png) 
+![](.ML_concepts_images/2728518c.png)
+![](.ML_concepts_images/c2e62588.png)
 ### 1.2.3 Normalization                                                                                                                                                                                                                                                                                                                                                                  
 ![](.ML_concepts_images/f025ba49.png)                                                                                                                                                                                                                                                                                                                                                                  
 Now that we can compute the gradient of the loss function, the procedure of **repeatedly evaluating 
 the gradient** and then performing a parameter update is called Gradient Descent. [Reference](https://cs231n.github.io/optimization-1/)
 
-- [**Implement**](https://www.geeksforgeeks.org/ml-stochastic-gradient-descent-sgd/?ref=rp):  
-[Three variants of GD](https://www.geeksforgeeks.org/ml-mini-batch-gradient-descent-with-python/?ref=rp)
+### 1.2.4 [**Implement**](https://www.geeksforgeeks.org/ml-stochastic-gradient-descent-sgd/?ref=rp):  
+#### [Three variants of GD](https://www.geeksforgeeks.org/ml-mini-batch-gradient-descent-with-python/?ref=rp)
   - [**Batch Gradient Descent**](https://ruder.io/optimizing-gradient-descent/index.html#gradientdescentvariants)
   - **Stochastic Gradient Descent**- one random sample
   
