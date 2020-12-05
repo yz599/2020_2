@@ -163,3 +163,4 @@ We compute the probability of a variable by summing everything else out.
 ### 2.3.1 Linear regression
 ![](.Neural_net_work_images/175201d6.png)
 ### 2.3.2 Classification - minimize cross entropy
+
