@@ -74,6 +74,7 @@ Independent Events -- Joint distribution
 
 #### 1.1.3 Entropy
 [Here is the reference](https://medium.com/@jonathan_hui/machine-learning-summary-fundamental-6562ff7448a)  
+[Visualization](http://colah.github.io/posts/2015-09-Visual-Information/#fn4)  
 
 | Name  |Formula   |
 |---|---|
