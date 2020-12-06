@@ -1,5 +1,9 @@
 # 1.Entropy
 [Here is the reference](https://medium.com/@jonathan_hui/machine-learning-summary-fundamental-6562ff7448a)  
+[Visualization](http://colah.github.io/posts/2015-09-Visual-Information/#fn4)  
+
+
+
 
 | Name  |Formula   |
 |---|---|
@@ -159,7 +163,6 @@ We compute the probability of a variable by summing everything else out.
 
 ## 2.3 Cost function vs MLE vs MAP
 **Cost function is equivalent to (derived from) MLE and MAP (with regularization)**
-
 ### 2.3.1 Linear regression
 ![](.Neural_net_work_images/175201d6.png)
 ### 2.3.2 Classification - minimize cross entropy
