@@ -17,8 +17,8 @@
 ![](https://miro.medium.com/max/1400/1*WMMz5lEbZEowSWoPJ0eR6w.jpeg)
 ![](https://miro.medium.com/max/1400/1*CICgG0p9CUKKgB__eXmj7A.jpeg) 
 
-- <font color='red'>Cross entropy=conditional entropy
-- <font color='red'>Information gain=KL Divergence （In decision tree）  
+
+- <font color='red'>Information gain=KL Divergence （In decision tree</font>
 ![](.ML_images/faa582f0.png)
 
 ---
@@ -31,12 +31,29 @@ In computer science, the information content can also be viewed as the number of
 
 X is called a random variable if it holds a value generated from a random process (a stochastic process), e.g. the face value in rolling dice or the total number of heads after flipping a coin 20 times.
 
-## 1.2 Entropy
+## 1.2 [Entropy - one rv](https://homes.cs.washington.edu/~ewein//blog/2020/07/30/joint-entropy/)
 **Entropy H** measures the expected information content of **a random variable**. To calculate the value, we sum up all information content with a weight equals to its occurrence frequency.  
 
 ![](https://miro.medium.com/max/700/1*ISBA6bFbft3RgSgk8hAFaw.jpeg)
 
-## <font color='red'>**1.3 Cross entropy H(P,Q)**  
+## 1.3 [Cross entropy - two rvs](https://homes.cs.washington.edu/~ewein//blog/2020/07/30/joint-entropy/)
+
+-  **Joint entropy**: However, we often want to understand not just the uncertainty in a single event XX, but the **joint uncertainty of two events X and Y**
+- **Conditional entropy**: knowing the outcome of one event YY changes the amount of uncertainty we have about XX. 
+- >Going back to our weather example, suppose that we’re back in Seattle during the winter and everyone knows the weather will be overcast all the time - how does this affect the amount of information/surprise contained in our temperature report
+- **Mutual information**:Sometimes, instead of looking at the new uncertainty H(Y|X)H(Y∣X), we instead want to understand the change in uncertainty caused by knowing XX. 
+
+|   |   |   |   |   |
+|---|---|---|---|---|
+| Joint entropy  |  ![picture 1](../../images/c54531c325c3d824d2098576b49c76d680a1b71b0a9ef6538fd5dd2b5591346c.png)  
+ |   |   |   |
+|Conditional Entropy   | ![picture 3](../../images/1d6bf397846ba3a5387d59fde0ec244370f27c9aa3f5f7bf56f3cc28b3cf4cf2.png)  
+  |   |   |   |
+| Chain rule  | ![picture 4](../../images/488b0dbda4c4e321b116ee1c01bee293104e7738f0d660128464a9f8ede2d6de.png)  
+  |   |   |   |
+|Mutual information|![picture 5](../../images/5d9bdb0b603c84e7e4a23d780ac9a84943572f1fc13e5595be24e0bf18006d23.png)  
+||||
+### <font color='red'>**Cross entropy H(P,Q)**</font>
 Cross-entropy H(P, Q) measures the expected number of bits to encode X with distribution P using an encoding scheme targeted for distribution Q.
 
 ![](https://miro.medium.com/max/700/1*J7Q93nEPvsgo0K5fhJMPZQ.png)
@@ -51,15 +68,10 @@ The cross-entropy for our example is
 As shown above, the cost function for many classification problems is simply
 ![](https://miro.medium.com/max/700/1*jZFXNjzolcoN-LqcUB0h_w.jpeg)
 
-### <font color='red'>**1.3.1 KL-divergence**  
-KL-divergence measures the difference between two distributions P and Q.  
-![](https://miro.medium.com/max/700/1*o-pPUakkB3-axXEviqsreg.jpeg)  
 
-<font color='red'>Cross entropy -Entropy = KL Divergence
+### <font color='red'>**1.3.1 Joint entropy**</font>
 
-i.e., KL-Divergence measures the inefficiency of representing P with encoding scheme Q — the extra-bits to encode the information with the sub-optimal scheme. Therefore, KL-divergence is always greater or equal to zero
-
-### <font color='red'>**1.3.2 Conditional Entropy**
+### <font color='red'>**1.3.2 Conditional Entropy**</font>
 
 The conditional entropy H(Y|X) is the entropy of Y given X is known. If Y can be separated according to X, this is the weighted entropy of the separated groups and calculated as:
 
@@ -68,11 +80,22 @@ The conditional entropy H(Y|X) is the entropy of Y given X is known. If Y can be
 ![](.ML_images/232c0e1f.png)
 
 ![](.ML_images/ea24b30f.png)
+### <font color='red'>**1.3.3 Information gain I(X,Y)- mutual information**</font>
+- Mutual information (or Information gain) I(X; Y) is the information obtained on the random variable X when Y is observed.
+- I(X;Y) as the reduction in uncertainty of XX given YY.
+- **measure how much information the variables contain about each other.** 
+  
+----
+how different the **joint distribution of X and Y** is from what it would be if they were **independent** (and the joint was simply the product of marginals).
+  ![picture 5](../../images/5d9bdb0b603c84e7e4a23d780ac9a84943572f1fc13e5595be24e0bf18006d23.png)
 
-### <font color='red'>**1.3.3 Information gain I(X,Y)- mutual information**
-Mutual information (or Information gain) I(X; Y) is the information obtained on the random variable X when Y is observed.
-
-![](https://miro.medium.com/max/1400/1*zc-hk1AKkKOwxvIS9TopZw.jpeg)
+- amount of information X and Y provide about each other then would be to compare the ratio p(x,y)/p(x)p(y)
+- <font color='red'>**in other words, how far the true joint distribution is from what independence would be.**</font>
+- If X and Y are independent (i.e., p(x,y) = p(x)p(y)), then intuitively our variables are contain no information about each other. 
+- On the other hand, for non-independent XX and YY, knowing the value of one variable should provide some reduction in uncertainty of the other variable. 
+### **Mutual information and entropy**
+![picture 6](../../images/6dec0f6bc2b928592139cbc8322e8dd750165502e8487c2213c99552228a0529.png)  
+>mutual information is precisely the reduction of uncertainty of XX due to the knowledge of YY.
 
 <font color="red"> Use KL-divergence for mutual information gain </font>
 
@@ -82,8 +105,17 @@ Mutual information (or Information gain) I(X; Y) is the information obtained on 
 
 
 >**A could be seen as the features of the decision tree**
+### <font color='red'>**1.3.4 [KL-divergence](https://homes.cs.washington.edu/~ewein//blog/2020/08/09/mutual-information/)**</font>
+KL-divergence measures the difference between two distributions P and Q.  
+![](https://miro.medium.com/max/700/1*o-pPUakkB3-axXEviqsreg.jpeg)  
 
-**Example**  
+<font color='red'>Cross entropy -Entropy = KL Divergence</font>
+
+i.e., KL-Divergence measures the inefficiency of representing P with encoding scheme Q — the extra-bits to encode the information with the sub-optimal scheme. Therefore, KL-divergence is always greater or equal to zero
+
+
+
+### **Example**  
 
 ![](.ML_images/9fe260b2.png)
 
@@ -103,7 +135,7 @@ Let’s visualize this with sets. The mutual information is its overlap.
 # 2. Cost function - MLE/MAP
 
 
-<font color='red'>**Cost function_ cross entropy (KL-divergence) _ MAP _MLE**
+<font color='red'>**Cost function_ cross entropy (KL-divergence) _ MAP _MLE**</font>
 - The core of Bayesian Inference is to combine two different distributions (likelihood and prior) into one “smarter” distribution (posterior). 
 - Posterior is “smarter” in the sense that the classic maximum likelihood estimation (MLE) doesn’t take into account a prior. Once we calculate the posterior, we use it to find the “best” parameters and the “best” is in terms of maximizing the posterior probability, given the data. 
 - This process is called Maximum A Posteriori (MAP). The optimization used in MAP is the same as the one used in typical machine learning, such as gradient descent or Newton’s method, etc.
@@ -118,19 +150,19 @@ Let’s visualize this with sets. The mutual information is its overlap.
 
 
 ### 2.1.1 MLE  
-<font color='red'>likelihood function P(X|θ)  
+<font color='red'>likelihood function P(X|θ)</font> 
 ![](.ML_probability_images/38107e3b.png)
 ![](.ML_probability_images/ee1c6dc2.png)
 
 ### 2.1.2 MAP   
-<font color='red'>it works on a posterior distribution, not only the likelihood.  
+<font color='red'>it works on a posterior distribution, not only the likelihood.</font>  
 ![](.ML_probability_images/b1863c0c.png)
 
 - Comparing both MLE and MAP equation, the only thing differs is the inclusion of prior P(θ) in MAP, otherwise they are identical.
 - What it means is that, the likelihood is now **weighted with some weight coming from the prior**.
 
 ## 2.2 MAP vs MLE
-### <font color='red'>2.2.1 Assume prior P(θ) is a **uniform distribution** and MAP=MLE  
+### <font color='red'>2.2.1 Assume prior P(θ) is a **uniform distribution** and MAP=MLE</font>  
 
 ![](.ML_probability_images/1659e506.png)  
 
@@ -139,7 +171,7 @@ if we use the simplest prior in MAP estimation, like a uniform prior,
 - The implication is that the likelihood equivalently weighted by some constants. 
   - Being constant, we could be ignored from our MAP equation, as it will not contribute to the maximization.    
 
-### <font color='red'>2.2.2 Prior= a **Gaussian**,MAP = L2 regularization of MLE
+### <font color='red'>2.2.2 Prior= a **Gaussian**,MAP = L2 regularization of MLE</font>
 **If we use different prior, say, a Gaussian, then our prior is not constant anymore, 
 as depending on the region of the distribution, the probability is high or low, never always the same.**
 
