@@ -2,25 +2,25 @@
 [Here is the reference](https://medium.com/@jonathan_hui/machine-learning-summary-fundamental-6562ff7448a)  
 [Visualization](http://colah.github.io/posts/2015-09-Visual-Information/#fn4)  
 
-
+![](.1_2_Entropy_map_mle_images/48997cb4.png)
 
 
 | Name  |Formula   |
 |---|---|
 | Information of an event   |  I(x) = -log(p(x)) |
 | Entropy of a random variable   |![](https://miro.medium.com/max/700/1*ISBA6bFbft3RgSgk8hAFaw.jpeg)|
-|  Cross entropy H(P,Q) |![](https://miro.medium.com/max/700/1*J7Q93nEPvsgo0K5fhJMPZQ.png)  |
-|KL Divergence |![](https://miro.medium.com/max/700/1*o-pPUakkB3-axXEviqsreg.jpeg) ![](.ML_images/ad94a2c2.png)|
 |Conditional entropy|![](https://miro.medium.com/max/1400/1*Fkcmkzp1uoML3fujNf2gYA.jpeg)|
+|Cross entropy H(P,Q) |![](https://miro.medium.com/max/700/1*J7Q93nEPvsgo0K5fhJMPZQ.png)  |
+|KL Divergence |![](https://miro.medium.com/max/700/1*o-pPUakkB3-axXEviqsreg.jpeg) ![](.ML_images/ad94a2c2.png)|
 |Information gain |![](https://miro.medium.com/max/1400/1*zc-hk1AKkKOwxvIS9TopZw.jpeg)|
 
 ![](https://miro.medium.com/max/1400/1*WMMz5lEbZEowSWoPJ0eR6w.jpeg)
 ![](https://miro.medium.com/max/1400/1*CICgG0p9CUKKgB__eXmj7A.jpeg) 
 
 
-- <font color='red'>Information gain=KL Divergence （In decision tree</font>
+<font color='red'>**Mutual information=Information gain=KL Divergence**</font>
 ![](.ML_images/faa582f0.png)
-
+![picture 6](../../images/6dec0f6bc2b928592139cbc8322e8dd750165502e8487c2213c99552228a0529.png)
 ---
 ## 1.1 Information
 The Shannon **information content** is the amount of information gain when **an event x occurs**. Mathematically, it is defined as:  
@@ -53,20 +53,7 @@ X is called a random variable if it holds a value generated from a random proces
   |   |   |   |
 |Mutual information|![picture 5](../../images/5d9bdb0b603c84e7e4a23d780ac9a84943572f1fc13e5595be24e0bf18006d23.png)  
 ||||
-### <font color='red'>**Cross entropy H(P,Q)**</font>
-Cross-entropy H(P, Q) measures the expected number of bits to encode X with distribution P using an encoding scheme targeted for distribution Q.
 
-![](https://miro.medium.com/max/700/1*J7Q93nEPvsgo0K5fhJMPZQ.png)
-
-In ML, we want our predictions Q to match the ground truth P. If they match, **the cross-entropy will be the minimum** and therefore, we often use it as our training objective.  
-
-![](https://miro.medium.com/max/700/1*kUXKKpUU_b9Y0cb_Zj6gjg.jpeg)
-
-The cross-entropy for our example is
-![](https://miro.medium.com/max/700/1*emraDRFHPR7fXpo4U3N7jg.jpeg)  
-
-As shown above, the cost function for many classification problems is simply
-![](https://miro.medium.com/max/700/1*jZFXNjzolcoN-LqcUB0h_w.jpeg)
 
 
 ### <font color='red'>**1.3.1 Joint entropy**</font>
@@ -80,40 +67,26 @@ The conditional entropy H(Y|X) is the entropy of Y given X is known. If Y can be
 ![](.ML_images/232c0e1f.png)
 
 ![](.ML_images/ea24b30f.png)
-### <font color='red'>**1.3.3 Information gain I(X,Y)- mutual information**</font>
-- Mutual information (or Information gain) I(X; Y) is the information obtained on the random variable X when Y is observed.
-- I(X;Y) as the reduction in uncertainty of XX given YY.
-- **measure how much information the variables contain about each other.** 
-  
-----
-how different the **joint distribution of X and Y** is from what it would be if they were **independent** (and the joint was simply the product of marginals).
+### <font color='red'>**1.3.3 Information gain I(X,Y)- mutual information(two ways to understand)**</font>
+#### 1. how different the **joint distribution of X and Y** is from what it would be if they were **independent** (and the joint was simply the product of marginals). (_conceptually_)
   ![picture 5](../../images/5d9bdb0b603c84e7e4a23d780ac9a84943572f1fc13e5595be24e0bf18006d23.png)
 
 - amount of information X and Y provide about each other then would be to compare the ratio p(x,y)/p(x)p(y)
 - <font color='red'>**in other words, how far the true joint distribution is from what independence would be.**</font>
 - If X and Y are independent (i.e., p(x,y) = p(x)p(y)), then intuitively our variables are contain no information about each other. 
 - On the other hand, for non-independent XX and YY, knowing the value of one variable should provide some reduction in uncertainty of the other variable. 
-### **Mutual information and entropy**
-![picture 6](../../images/6dec0f6bc2b928592139cbc8322e8dd750165502e8487c2213c99552228a0529.png)  
+  
 >mutual information is precisely the reduction of uncertainty of XX due to the knowledge of YY.
 
-<font color="red"> Use KL-divergence for mutual information gain </font>
+![](.ML_images/a12c1007.png) 
 
-![](.ML_images/53e1bf68.png)
-
-![](.ML_images/a12c1007.png)  
-
-
+----
+#### 2. information obtained on the random variable X when Y is observed. (_classification_)
+- I(X;Y) as the reduction in uncertainty of XX given YY.
+- **measure how much information the variables contain about each other.**
+- **Mutual information and entropy**
+![picture 6](../../images/6dec0f6bc2b928592139cbc8322e8dd750165502e8487c2213c99552228a0529.png) 
 >**A could be seen as the features of the decision tree**
-### <font color='red'>**1.3.4 [KL-divergence](https://homes.cs.washington.edu/~ewein//blog/2020/08/09/mutual-information/)**</font>
-KL-divergence measures the difference between two distributions P and Q.  
-![](https://miro.medium.com/max/700/1*o-pPUakkB3-axXEviqsreg.jpeg)  
-
-<font color='red'>Cross entropy -Entropy = KL Divergence</font>
-
-i.e., KL-Divergence measures the inefficiency of representing P with encoding scheme Q — the extra-bits to encode the information with the sub-optimal scheme. Therefore, KL-divergence is always greater or equal to zero
-
-
 
 ### **Example**  
 
@@ -131,6 +104,32 @@ We should not mistake its picture with other objects. Therefore the information 
 
 Let’s visualize this with sets. The mutual information is its overlap.
 ![](https://miro.medium.com/max/1400/1*ORqXN86SlaUSfjNvob-xSg.jpeg)
+
+## 1.4 Classification 
+### 1.4.1 Cross entropy H(P,Q)= conditional entropy**
+Cross-entropy H(P, Q) measures the expected number of bits to encode X with distribution P using an encoding scheme targeted for distribution Q.
+
+![](https://miro.medium.com/max/700/1*J7Q93nEPvsgo0K5fhJMPZQ.png)
+
+In ML, we want our predictions Q to match the ground truth P. If they match, **the cross-entropy will be the minimum** and therefore, we often use it as our training objective.  
+
+![](https://miro.medium.com/max/700/1*kUXKKpUU_b9Y0cb_Zj6gjg.jpeg)
+
+The cross-entropy for our example is
+![](https://miro.medium.com/max/700/1*emraDRFHPR7fXpo4U3N7jg.jpeg)  
+
+As shown above, the cost function for many classification problems is simply
+![](https://miro.medium.com/max/700/1*jZFXNjzolcoN-LqcUB0h_w.jpeg)
+
+### 1.4.2 <font color='red'>1.3.4 KL-divergence = mutual information</font>
+KL-divergence measures the difference between two distributions P and Q.  
+![](https://miro.medium.com/max/700/1*o-pPUakkB3-axXEviqsreg.jpeg)  
+
+<font color='red'>Cross entropy -Entropy = KL Divergence</font>
+
+i.e., KL-Divergence measures the inefficiency of representing P with encoding scheme Q — the extra-bits to encode the information with the sub-optimal scheme. Therefore, KL-divergence is always greater or equal to zero
+<font color="red"> Use KL-divergence for mutual information gain </font>
+
 
 # 2. Cost function - MLE/MAP
 
