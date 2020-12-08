@@ -193,7 +193,7 @@ To make a new prediction, we use the posterior p(θ | X, y) in our training as p
 We compute the probability of a variable by summing everything else out.
 
 ## 2.3 Cost function vs MLE vs MAP
-**Cost function is equivalent to (derived from) MLE and MAP (with regularization)**
+### **Cost function is equivalent to (derived from) MLE and MAP (with regularization)**
 ### 2.3.1 Linear regression
 ![](.Neural_net_work_images/175201d6.png)
 ### 2.3.2 Classification - minimize cross entropy
