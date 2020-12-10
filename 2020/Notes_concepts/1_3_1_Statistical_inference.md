@@ -36,7 +36,7 @@ Sampling bias limits the generalizability of findings because it is a threat to 
  be generalized to populations that share characteristics with the sample.
 
 
-### 1.1.2 [Descriptive statistics](https://www.scribbr.com/statistics/descriptive-statistics/)
+### 1.2 [Descriptive statistics](https://www.scribbr.com/statistics/descriptive-statistics/)
 
 **Descriptive statistics** summarize and organize characteristics of a data set- 
 collection of responses or observations from a **sample** or **entire population**.
@@ -147,7 +147,7 @@ There are 5 main steps in hypothesis testing:
 
 ### Backgrounds
 
-#### [Three forms of statistical tests](https://www.scribbr.com/statistics/inferential-statistics/)
+### 2.2.1 [Three forms of statistical tests](https://www.scribbr.com/statistics/inferential-statistics/)
 - **Comparison tests** assess whether there are differences in **means,
  medians or rankings** of scores of two or more groups.
   - **Means** can only be found for **interval or ratio data**, 
@@ -167,8 +167,8 @@ There are 5 main steps in hypothesis testing:
   - If your data is not normally distributed, you can **perform data transformations**.  
   
 ![](.1_Statistical_images/8756daf4.png)
-### 2.2.1 Null hypothesis
-### 2.2.2 Which statisticl test to use
+### 2.2.2 Null hypothesis
+### 2.2.3 Which statisticl test to use
 
 To determine which statistical test to use, you need to know: 
 - whether your data meets certain assumptions.
@@ -218,13 +218,13 @@ Parametric tests make assumptions that include the following:
 ### Lookup table
 ![](.1_Statistical_images/35289fb4.png)
 
-## 2.4 Cause-effect relationship
-### 2.4.1 [Independent_dependent variable and confounding variable](https://www.scribbr.com/methodology/types-of-variables/)
+## 2.3 Cause-effect relationship
+### 2.3.1 [Independent_dependent variable and confounding variable](https://www.scribbr.com/methodology/types-of-variables/)
 The variables in a study of a cause-and-effect relationship are called the independent and dependent variables.
 
 - The independent variable is the cause. Its value is independent of other variables in your study.
 - The dependent variable is the effect. Its value depends on changes in the independent variable.
-### 2.4.2 [Confounding varialbe](https://www.scribbr.com/methodology/confounding-variables/)
+### 2.3.2 [Confounding varialbe](https://www.scribbr.com/methodology/confounding-variables/)
 In research that investigates a potential cause-and-effect relationship, 
 a confounding variable is an unmeasured third variable 
 that influences both the supposed cause and the supposed effect.  
