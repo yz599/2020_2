@@ -36,12 +36,11 @@ Sampling bias limits the generalizability of findings because it is a threat to 
  be generalized to populations that share characteristics with the sample.
 
 
-###1.1.2 [Descriptive statistics](https://www.scribbr.com/statistics/descriptive-statistics/)
+### 1.1.2 [Descriptive statistics](https://www.scribbr.com/statistics/descriptive-statistics/)
 
 **Descriptive statistics** summarize and organize characteristics of a data set- 
 collection of responses or observations from a **sample** or **entire population**.
 
-### 1.1.3 Univariate/bivariate:
 - **distribution** concerns the frequency of each value.  
 - **central tendency** concerns the averages of the values.  
 - **variability or dispersion** concerns how spread out the values are.  
@@ -211,7 +210,8 @@ Parametric tests make assumptions that include the following:
 - useful when one or more of the common statistical assumptions are violated. 
 - However, the inferences they make aren’t as strong as with parametric tests.
 ![](.1_Statistical_images/fac7f8aa.png)
-
+[Reference1](https://bookdown.org/thomas_pernet/Tuto/non-parametric-tests.html)
+[Reference2](https://slcladal.github.io/basicstatz.html)
 ### 2.2.3 [Test statistics](https://www.scribbr.com/statistics/test-statistic/)
 ![](.1_Statistical_images/d6153ea5.png)
 
