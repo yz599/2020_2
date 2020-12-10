@@ -36,7 +36,7 @@ Sampling bias limits the generalizability of findings because it is a threat to 
  be generalized to populations that share characteristics with the sample.
 
 
-### 1.2 [Descriptive statistics](https://www.scribbr.com/statistics/descriptive-statistics/)
+## 1.2 [Descriptive statistics](https://www.scribbr.com/statistics/descriptive-statistics/)
 
 **Descriptive statistics** summarize and organize characteristics of a data set- 
 collection of responses or observations from a **sample** or **entire population**.
