@@ -88,20 +88,19 @@ It says that for large enough sample size, the distribution of sample average (a
  This remarkable result implies that under virtually all circumstances it is possible to make probabilistic 
  inferences about the values of population parameters based on sample statistics.
 
-### 2.1.1 Two types of estimates
-#### Point estimate
+### 2.1.1 Point estimate
  is a single value estimate of a parameter. For instance, a sample mean is a point estimate of a population mean.
-#### Interval estimate 
+### 2.1.2 Interval estimate 
 gives you a range of values where the parameter is expected to lie. 
 - **Confidence interval** is the most common type of interval estimate.
-##### <font color='red'>**Confidence interval**</font> 
+#### <font color='red'>**Confidence interval**</font> 
 uses the **variability** around a **statistic** to come up with an interval estimate for a parameter.
 - Confidence intervals are useful for estimating parameters because they **take sampling error into account.**
 >While a point estimate gives you a precise value for the parameter you are interested in, a confidence 
 >interval tells you the **uncertainty of the point estimate**.   
 >They are best used in combination with each other.
 
-##### <font color='red'>Confidence level</font>
+#### <font color='red'>Confidence level</font>
 - tells you the **probability (in percentage)** of the 
 - **interval** containing the **parameter estimate** 
 - if you **repeat the study** again.
@@ -109,7 +108,7 @@ uses the **variability** around a **statistic** to come up with an interval esti
 >certain percentage of the time.
 
 
-##### <font color='red'>Confidence interval vs CLT</font>
+#### <font color='red'>Confidence interval vs CLT</font>
 - The sampling mean fluctuates around the true miu but there is **variation due to sampling process** 
 or repeated measurement which is not avoidable.
 - Sample mean xn is changing with sampling,  (but central tendency is miu) and 
@@ -212,7 +211,7 @@ Parametric tests make assumptions that include the following:
 ![](.1_Statistical_images/fac7f8aa.png)
 [Reference1](https://bookdown.org/thomas_pernet/Tuto/non-parametric-tests.html)
 [Reference2](https://slcladal.github.io/basicstatz.html)
-### 2.2.3 [Test statistics](https://www.scribbr.com/statistics/test-statistic/)
+### 2.2.4 [Test statistics](https://www.scribbr.com/statistics/test-statistic/)
 ![](.1_Statistical_images/d6153ea5.png)
 
 ### Lookup table
