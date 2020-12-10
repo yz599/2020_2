@@ -7,7 +7,7 @@ This notes discussed the NN from three different perspectives
 
 ![](.Neural_net_work_images/fa25f84b.png)
 
-## 1. Linear regression
+# 1. Linear regression
 ![](.Neural_net_work_images/606b2866.png)
 ![](.Neural_net_work_images/175201d6.png)
 ![](.Neural_net_work_images/270f5bf5.png)
@@ -17,9 +17,9 @@ This notes discussed the NN from three different perspectives
 
 ![picture 2](../../images/960da22eee12f7570431c03f2812e3aae3ac637fb72d4518ba7399a1baa40368.png)  
 
-## 2. Logistic regression
+# 2. Logistic regression
 
-### Classify the data by distance to the line
+## Classify the data by distance to the line
 
 ![](.Neural_net_work_images/498b7559.png)![](.Neural_net_work_images/f3147230.png)![](.Neural_net_work_images/e7c01cfb.png)
 
@@ -33,11 +33,11 @@ This notes discussed the NN from three different perspectives
 
 3.	The function is a surface bent into a sigmoidal shape along the direction of the weight vector. Changing the network parameters can rotate the direction of the sigmoidal surface, and stretch or shift it. But, the fundamental sigmoidal shape will always remain.
 
-### 2.1 Prior probability and the line
+## 2.1 Prior probability and the line
 ![](.Neural_net_work_images/5214ece0.png)![](.Neural_net_work_images/70a922a4.png)
 
-## 3. Neural network
-### 3.1 [Linearity assumption:](http://d2l.ai/chapter_multilayer-perceptrons/mlp.html)
+# 3. Neural network
+## 3.1 [Linearity assumption:](http://d2l.ai/chapter_multilayer-perceptrons/mlp.html)
 
 
 Linearity implies: that for whatever target value we are trying to predict, increasing the value of each of our inputs should either drive the value of the output up or drive it down, irrespective of the value of the other inputs.
@@ -58,14 +58,50 @@ That approach is doomed to fail in a work that contains both black dogs and blac
 and both white dogs and white cats. Thus we need models capable of discovering patterns 
 that might be characterized by interactions among the many features
 
-### 3.2 Feature representation - non-linear transform through activation function
+## 3.2 Representation - Non-linear transform through activation function
 ![](.Neural_net_work_images/bb8fd916.png)  
 ![](.Neural_net_work_images/b123a8c2.png)
 ![](.Neural_net_work_images/0e93135d.png)
 
-### 3.3 Geometric
-![](.Neural_net_work_images/f3aa1625.png)
-![](.Neural_net_work_images/058b5781.png)
+## 3.3 Geometric
+### 3.3.1 In the original feature space
+
+#### [Feature representation and boundary](https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/)
+![](.Geometric intuition_images/20455f37.png)
+
+Example to demonstrate the transformation:  
+
+A tanh layer tanh(Wx+b) consists of:
+- A linear transformation by the “weight” matrix W
+- A translation by the vector b
+- Point-wise application of tanh.
+
+![](https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/img/1layer.gif)
+
+![](https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/img/spiral.1-2.2-2-2-2-2-2.gif)
+
+
+>- Boundary is projection of the function onto the original feature space. 
+>- So it's learnt by the function in high dimension and good for illustration
+>- This feasure representation in original space could be seen as the projection 
+of high dimension function as well
 ![](.Neural_net_work_images/42fc6263.png)
 
-![](.Neural_net_work_images/30782bae.png)
+### 3.3.2 Perspective of Kernel - projection to high dimension
+#### [Function approximation](https://towardsdatascience.com/representation-power-of-neural-networks-8e99a383586) 
+[Other reference](http://neuralnetworksanddeeplearning.com/chap4.html)
+> The function could separates the instances because how it has been learnt. **Loss function-Cross entropy**
+
+Function of features is learned by **backpropagation** process therefore, 
+let's look at the ANN learning from the **outerest hidden layer**:
+- is what ANN's looking for 
+- from **kernal perspective**, project the data(or representation features from prior layer ) 
+to higher dimension as the results of Relu(Wx+b) **which is separable**
+- use backpropagation to **determine/learn** achieve such a function separating datapoints
+---
+- Goal: a function could separate the data (could be thought as kernal function)
+- Use neural net to approximate the function, hence the function could be only represented by
+the neurual network (something similar to Tyler Series)
+
+
+![](.Geometric intuition_images/2509e883.png)
