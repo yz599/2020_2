@@ -103,10 +103,10 @@ to higher dimension as the results of Relu(Wx+b) **which is separable**
 - Use neural net to approximate the function, hence the function could be only represented by
 the neurual network (something similar to Tyler Series)
 
-![](.Geometric intuition_images/2509e883.png)
+![picture 10](../../images/e487e739add0b1931db6d008c43ea347e94aa57bbf6337394d97b2ff72647ade.png)  
 
+## [Opening the black box of deep neural networks via information](http://mitliagkas.github.io/ift6085/student_slides/IFT6085_Presentation_IB.pdf)
 
 ![picture 8](../../images/85b69cb8ba9307ff7907fa1777781e3cb3044bbd2969bd0b58c01212f861a115.png)  
 
 
-[Opening the black box of deep neural networks via information](http://mitliagkas.github.io/ift6085/student_slides/IFT6085_Presentation_IB.pdf)
