@@ -21,6 +21,7 @@
 
 ## [Reliability vs validity](https://www.scribbr.com/methodology/reliability-vs-validity/)
 ## 1.1 Sampling
+### 1.1.1 Sampling method
 
 | Sampling method  |Methods   | Defination  |   
 |---|---|---|
@@ -28,13 +29,15 @@
 | Non-probability sampling  |![](.1_Statistical_images/f3f5d00e.png)   | individuals are selected based on non-random criteria, and not every individual has a chance of being included.  |   
 |[Sampling size](https://www.surveymonkey.com/mp/sample-size-calculator/)   | [Sampling bias](https://www.scribbr.com/methodology/sampling-bias/)  | [Sampling error](https://www.scribbr.com/methodology/population-vs-sample/)  |    
 
-### 1.1.1 Sampling bias
+### 1.1.2 [Sampling size and power analysis](https://machinelearningmastery.com/statistical-power-and-power-analysis-in-python/)
+### 1.1.3 Sampling bias
 Sampling bias occurs when some members of a
  population are systematically more likely to be selected in a sample than others. 
  
 Sampling bias limits the generalizability of findings because it is a threat to external validity, specifically population validity. In other words, findings from biased samples can only 
  be generalized to populations that share characteristics with the sample.
 
+### 1.1.4 Sampling in python
 
 ## 1.2 [Descriptive statistics](https://www.scribbr.com/statistics/descriptive-statistics/)
 
