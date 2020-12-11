@@ -27,7 +27,7 @@
 | Probability sampling  | ![](.1_Statistical_images/a9524470.png)  |every member of the population has a chance of being selected   |   
 | Non-probability sampling  |![](.1_Statistical_images/f3f5d00e.png)   | individuals are selected based on non-random criteria, and not every individual has a chance of being included.  |   
 |[Sampling size](https://www.surveymonkey.com/mp/sample-size-calculator/)   | [Sampling bias](https://www.scribbr.com/methodology/sampling-bias/)  | [Sampling error](https://www.scribbr.com/methodology/population-vs-sample/)  |    
-
+[Sampling size](https://online.stat.psu.edu/statprogram/reviews/statistical-concepts/power-analysis)
 ### 1.1.1 Sampling bias
 Sampling bias occurs when some members of a
  population are systematically more likely to be selected in a sample than others. 
@@ -158,7 +158,7 @@ There are 5 main steps in hypothesis testing:
  - **Correlation tests** determine the extent to which two variables are associated.
    - Although **Pearson’s r** is the most statistically powerful test, 
    - **Spearman’s r** is appropriate for interval and ratio variables when the data **doesn’t follow a normal distribution**.
-   - The **chi square test** of independence is the only test that can be used with **nominal variables**.  
+   - The **[chi-square test](https://www.quora.com/What-is-the-most-intuitive-explanation-for-the-chi-square-test)** of independence is the only test that can be used with **nominal variables**.  
    
 ![](.1_Statistical_images/b9b067fa.png)
 
