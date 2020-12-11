@@ -20,7 +20,8 @@
 
 <font color='red'>**Mutual information=Information gain=KL Divergence**</font>
 ![](.ML_images/faa582f0.png)
-![picture 6](../../images/6dec0f6bc2b928592139cbc8322e8dd750165502e8487c2213c99552228a0529.png)
+![picture 6](../../images/6dec0f6bc2b928592139cbc8322e8dd750165502e8487c2213c99552228a0529.png)  
+
 ---
 ## 1.1 Information
 The Shannon **information content** is the amount of information gain when **an event x occurs**. Mathematically, it is defined as:  
@@ -68,7 +69,7 @@ The conditional entropy H(Y|X) is the entropy of Y given X is known. If Y can be
 
 ![](.ML_images/ea24b30f.png)
 ### <font color='red'>**1.3.3 Information gain I(X,Y)- mutual information(two ways to understand)**</font>
-#### 1. how different the **joint distribution of X and Y** is from what it would be if they were **independent** (and the joint was simply the product of marginals). (_conceptually_)
+#### How different the **joint distribution of X and Y** is from what it would be if they were **independent** (and the joint was simply the product of marginals). (_conceptually_)
   ![picture 5](../../images/5d9bdb0b603c84e7e4a23d780ac9a84943572f1fc13e5595be24e0bf18006d23.png)
 
 - amount of information X and Y provide about each other then would be to compare the ratio p(x,y)/p(x)p(y)
@@ -81,7 +82,7 @@ The conditional entropy H(Y|X) is the entropy of Y given X is known. If Y can be
 ![](.ML_images/a12c1007.png) 
 
 ----
-#### 2. information obtained on the random variable X when Y is observed. (_classification_)
+#### Information obtained on the random variable X when Y is observed. (_classification_)
 - I(X;Y) as the reduction in uncertainty of XX given YY.
 - **measure how much information the variables contain about each other.**
 - **Mutual information and entropy**
