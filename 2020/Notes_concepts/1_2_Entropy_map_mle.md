@@ -209,3 +209,5 @@ We compute the probability of a variable by summing everything else out.
 ![picture 1](../../images/a30daafa657dbc12bc4be70e82d794e71945159734f7cf94ed5f1f8d085839a5.png)  
 
 ![picture 2](../../images/90e98eea1283fad0244743b4a8d0da24489aafee50860ed94977cff5f77303ec.png)  
+
+![picture 4](../../images/459ded598b7f5779a9866eb3f01606e9b79756e2a2a4c3dd6f159e460c574b33.png)  

@@ -26,3 +26,7 @@ This reporsitory includes my study notes of machine learning and here gives the 
 
 # 6. SQL
 # 7. Algorithms - leetcode
+# 8. Important references
+[Statistical](https://jonathan-hui.medium.com/machine-learning-summary-fundamental-6562ff7448a)  
+
+[Concept summary](https://jonathan-hui.medium.com/machine-learning-summary-algorithm-d75c64963800)
