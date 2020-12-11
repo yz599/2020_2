@@ -68,8 +68,8 @@ The conditional entropy H(Y|X) is the entropy of Y given X is known. If Y can be
 ![](.ML_images/232c0e1f.png)
 
 ![](.ML_images/ea24b30f.png)
-### <font color='red'>**1.3.3 Information gain I(X,Y)- mutual information(two ways to understand)**</font>
-#### How different the **joint distribution of X and Y** is from what it would be if they were **independent** (and the joint was simply the product of marginals). (_conceptually_)
+### <font color='red'>**1.3.3 Information gain I(X,Y)- mutual information(three ways to understand)**</font>
+#### <font color='red'>How different the **joint distribution of X and Y** is from what it would be if they were **independent** (and the joint was simply the product of marginals). (_conceptually_)</font>
   ![picture 5](../../images/5d9bdb0b603c84e7e4a23d780ac9a84943572f1fc13e5595be24e0bf18006d23.png)
 
 - amount of information X and Y provide about each other then would be to compare the ratio p(x,y)/p(x)p(y)
@@ -81,13 +81,20 @@ The conditional entropy H(Y|X) is the entropy of Y given X is known. If Y can be
 
 ![](.ML_images/a12c1007.png) 
 
+---
+#### <font color='red'>Distance between two distribution (learned Q and P--Cross entropy-entropy)</font>
+  
+![](https://miro.medium.com/max/700/1*o-pPUakkB3-axXEviqsreg.jpeg) ![](.ML_images/ad94a2c2.png)
+
 ----
-#### Information obtained on the random variable X when Y is observed. (_classification_)
+#### <font color='red'>Information obtained on the random variable X when Y is observed. (_classification_Y is features)</font>
 - I(X;Y) as the reduction in uncertainty of XX given YY.
 - **measure how much information the variables contain about each other.**
 - **Mutual information and entropy**
 ![picture 6](../../images/6dec0f6bc2b928592139cbc8322e8dd750165502e8487c2213c99552228a0529.png) 
 >**A could be seen as the features of the decision tree**
+
+
 
 ### **Example**  
 
@@ -107,7 +114,7 @@ Let’s visualize this with sets. The mutual information is its overlap.
 ![](https://miro.medium.com/max/1400/1*ORqXN86SlaUSfjNvob-xSg.jpeg)
 
 ## 1.4 Classification 
-### 1.4.1 Cross entropy H(P,Q)= conditional entropy**
+### 1.4.1 Cross entropy H(P,Q)= Conditional entropy**
 Cross-entropy H(P, Q) measures the expected number of bits to encode X with distribution P using an encoding scheme targeted for distribution Q.
 
 ![](https://miro.medium.com/max/700/1*J7Q93nEPvsgo0K5fhJMPZQ.png)
@@ -122,7 +129,7 @@ The cross-entropy for our example is
 As shown above, the cost function for many classification problems is simply
 ![](https://miro.medium.com/max/700/1*jZFXNjzolcoN-LqcUB0h_w.jpeg)
 
-### 1.4.2 <font color='red'>1.3.4 KL-divergence = mutual information</font>
+### 1.4.2 <font color='red'>KL-divergence = Mutual information</font>
 KL-divergence measures the difference between two distributions P and Q.  
 ![](https://miro.medium.com/max/700/1*o-pPUakkB3-axXEviqsreg.jpeg)  
 
