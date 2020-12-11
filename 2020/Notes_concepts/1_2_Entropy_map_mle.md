@@ -114,7 +114,7 @@ Let’s visualize this with sets. The mutual information is its overlap.
 ![](https://miro.medium.com/max/1400/1*ORqXN86SlaUSfjNvob-xSg.jpeg)
 
 ## 1.4 Classification 
-### 1.4.1 Cross entropy H(P,Q)= Conditional entropy**
+### 1.4.1 Cross entropy H(P,Q)
 Cross-entropy H(P, Q) measures the expected number of bits to encode X with distribution P using an encoding scheme targeted for distribution Q.
 
 ![](https://miro.medium.com/max/700/1*J7Q93nEPvsgo0K5fhJMPZQ.png)
@@ -129,7 +129,7 @@ The cross-entropy for our example is
 As shown above, the cost function for many classification problems is simply
 ![](https://miro.medium.com/max/700/1*jZFXNjzolcoN-LqcUB0h_w.jpeg)
 
-### 1.4.2 <font color='red'>KL-divergence = Mutual information</font>
+### 1.4.2 <font color='red'>KL-divergence </font>
 KL-divergence measures the difference between two distributions P and Q.  
 ![](https://miro.medium.com/max/700/1*o-pPUakkB3-axXEviqsreg.jpeg)  
 
@@ -204,5 +204,10 @@ We compute the probability of a variable by summing everything else out.
 ### **Cost function is equivalent to (derived from) MLE and MAP (with regularization)**
 ### 2.3.1 Linear regression
 ![](.Neural_net_work_images/175201d6.png)
-### 2.3.2 Classification - minimize cross entropy
+### 2.3.2 Classification - minimize cross entropy  
 
+![](.1_2_Entropy_map_mle_images/2bee6bd4.png)
+
+![](.1_2_Entropy_map_mle_images/01bd2746.png)
+
+![picture 4](../../images/459ded598b7f5779a9866eb3f01606e9b79756e2a2a4c3dd6f159e460c574b33.png)  
