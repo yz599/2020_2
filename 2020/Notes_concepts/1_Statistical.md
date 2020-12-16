@@ -1,4 +1,28 @@
 # How does frequentist learn
+
+**<font color='red'>Core: Law of large number and CLT**  
+**<font color='red'>Probability** - relative frequency in long run of repeated trials, expressed as proportion
+
+- Learn from Sampling   
+- Make educated guess on population - statistical inference
+  - Sample != Population
+  
+    - Sample statistic - population parameter
+    - Sampling error - sample's mean and true mean
+    - Standard error and confidence intervals are ONLY measure of the effect of sampling error.
+      > Sampling brings in errors/variation (it's not the entire population but a random sample)
+  - Sample distribution of statistic <font color='red'>(CLT/LLN)</font> **long run frequency**
+    - Sampling distribution of the **mean = normal** - repeated sampling
+    - Mean of sampling (distribution) = population mean (in long run)
+      >LLN-If the sample is chosen randomly, then the EXPECTED average of the sample is the same as the true average of the population. 
+    - Standard error of the mean  
+    ..of a statistic (usually an estimate of a parameter) is the standard deviation of its sampling distribution or an estimate of that standard deviation
+      > is essentially the standard deviation of sample means around the population mean. 
+  In other words. If you repeated your analysis 1000 times, choosing a new random sample every time, and plotted each mean on a histogram, you’d get something that looks like a normal distribution with a mean equal to the population’s mean and a standard deviation equal to the standard error. 
+  
+ [Sampling error and standard error](https://www.analystforum.com/t/sampling-error-vs-standard-error-of-the-sample-mean/53982/2)
+ 
+
 ![](.1_Statistical_images/d397d627.png)
 # 1. Samples and population:
 |   |Definition   | Features  |Relations   
@@ -8,7 +32,14 @@
 
 
 - A **parameter** is a measure that describes the whole population. 
-- A **statistic** is a measure that describes the sample.
+- A **[statistic](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading22.pdf)** is a measure that describes the sample.
+  -  **Descriptive statistic**:descriptive statistics, which summarize data from a sample using indexes such as the mean or standard deviation,
+  -  **Inferential statistic**:draw conclusions from data that are subject to random variation (e.g., observational errors, sampling variation).
+Inferences on mathematical statistics are made under the framework of **probability theory**, which deals with the analysis of random phenomena.
+ 
+However, **drawing the sample contains an element of randomness;** 
+hence, the numerical descriptors from the sample are also prone to uncertainty. 
+To draw meaningful conclusions about the entire population, inferential statistics is needed. 
 
 
 - **Categorical variables** (e.g., political affiliation), the most common statistic or parameter is a **proportion**.
@@ -18,6 +49,12 @@
 - You can use estimation or **hypothesis testing** to estimate 
 **how likely** it is that a sample statistic differs from the population parameter.
 - **Confidence interval** takes account **sampling error (how much difference=how likely)**
+
+It uses patterns in the sample data to draw inferences about the population represented while accounting for randomness. These inferences may take the form of 
+- answering yes/no questions about the data (hypothesis testing), 
+- estimating numerical characteristics of the data (estimation), 
+- describing associations within the data (correlation), 
+-  and modeling relationships within the data (for example, using regression analysis).
 
 ## [Reliability vs validity](https://www.scribbr.com/methodology/reliability-vs-validity/)
 ## 1.1 Sampling
@@ -68,21 +105,19 @@ Inferential statistics have **two main uses**:
 
 ## 2.1 Estimating population parameters from sample statistics
 
-Sampling error (think about repeated meansuring) is the difference between a parameter and a corresponding statistic. 
+- Sampling error (think about repeated meansuring) is the difference between a parameter and a corresponding statistic. 
+- Sampling distribution of statistic
 
-### Law of large numbers/Central Limit Theorem (CLT)
+**<font color='red'>Sampling ---CLT--- Population**
+samples can provide information about populations, and that the accuracy of this information increases with an increase in the samples.
+### Law of large numbers/Central Limit Theorem (CLT) - MEAN
 ![](.1_Statistical_images/95bc2583.png)
 
 The law of large numbers as well as the central limit theorem are partial solutions to a general problem: 
 **"What is the limiting behavior of Sn as n approaches infinity?"**
-1.	By the law of large numbers, the sample averages converge in probability and almost surely to the expected value µ as n approaches infinity
-2.	The classical central limit theorem describes the **size and the distributional form** of the **stochastic fluctuations** 
-around the **deterministic number µ** during this convergence.
-**Another way:**
-1.	What is the essence of statistical inference: that samples can provide information about populations, 
-and that the accuracy of this information increases with an increase in the samples.
-2.	The Central Limit Theorem (CLT) adds one key result to the ones above. 
-It says that for large enough sample size, the distribution of sample average (and, in fact, virtually any statistic)
+1.	**sample averages** converge in probability and almost surely to the expected value µ as n approaches infinity
+2.	<font color='red'>(standard error/confidence interval)</font> **size and the distributional form** of the **stochastic fluctuations/sampling error** around the **deterministic number µ** during this convergence.   
+3.	It says that for large enough sample size, the distribution of sample average (and, in fact, virtually any statistic)
  becomes closer and closer to Gaussian (normal), **no matter what the underlying distribution of X is**.  
   
  This remarkable result implies that under virtually all circumstances it is possible to make probabilistic 
@@ -92,7 +127,11 @@ It says that for large enough sample size, the distribution of sample average (a
 #### Point estimate
  is a single value estimate of a parameter. For instance, a sample mean is a point estimate of a population mean.
 #### Interval estimate 
-gives you a range of values where the parameter is expected to lie. 
+an interval estimate, e.g. a confidence interval (or set estimate), 
+i.e. an interval constructed using a dataset drawn from a population so that, 
+under repeated sampling of such datasets, 
+such intervals would contain the true parameter value with the probability at the stated confidence level;
+ 
 - **Confidence interval** is the most common type of interval estimate.
 ##### <font color='red'>**Confidence interval**</font> 
 uses the **variability** around a **statistic** to come up with an interval estimate for a parameter.
@@ -101,11 +140,11 @@ uses the **variability** around a **statistic** to come up with an interval esti
 >interval tells you the **uncertainty of the point estimate**.   
 >They are best used in combination with each other.
 
-##### <font color='red'>Confidence level</font>
+##### <font color='red'>Confidence level vs standard error vs sampling error</font>
 - tells you the **probability (in percentage)** of the 
 - **interval** containing the **parameter estimate** 
 - if you **repeat the study** again.
-> you can reasonably expect your **confidence interval** to contain the **parameter** a 
+> you can reasonably expect **confidence interval** to contain the **parameter** a 
 >certain percentage of the time.
 
 
@@ -117,7 +156,7 @@ or repeated measurement which is not avoidable.
 - When you have the distribution of sampling mean (based on LoC), you'll be good to know the 
 the interval of the sample mean occurring 95% of the time.
 
->Distribution of sample mean is know - what is interval that is likely to happen 95 out of 100 times. **It's sample-dependent**
+**The confidence interval is varying from sample to sample -- sample-dependent**
 
 A 95% confidence interval means that if you **repeat your study** with a new sample **in exactly 
 the same way** 100 times, you can expect your estimate to lie within the specified range 

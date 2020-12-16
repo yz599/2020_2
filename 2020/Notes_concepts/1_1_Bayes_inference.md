@@ -79,3 +79,5 @@ e.g., P(W=rich | G = female, H = 40.5)= ![](.ML_probability_images/8da29a62.png)
 the range of possible parameters is now narrower.   
 - The more data you gather, the graph of the posterior will look more like that of the **likelihood and less like that of the prior**.
 - In other words, as you get more data, the **original prior distribution matters less**. 
+
+# 4. [Conditional Independence ](https://towardsdatascience.com/conditional-independence-the-backbone-of-bayesian-networks-85710f1b35b)
