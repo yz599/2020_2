@@ -18,7 +18,7 @@
   ![](.ML_concepts_images/4575c2c2.png)
   [Reference](https://towardsdatascience.com/implement-gradient-descent-in-python-9b93ed7108d1)                                                                                                                                                                                                                                                                                                                                                    
 
-#### **Explanation of N in the equation**  
+### 1.2.3 **Explanation of N in the equation**  
 ![picture 8](../../images/1f414a3db11ba47069131ae8b877d90cf5b5f7a26b32868ab3903fe7a57403de.png) 
 ![](.ML_concepts_images/2728518c.png)
 ![](.ML_concepts_images/c2e62588.png)
@@ -27,7 +27,8 @@
 Now that we can compute the gradient of the loss function, the procedure of **repeatedly evaluating 
 the gradient** and then performing a parameter update is called Gradient Descent. [Reference](https://cs231n.github.io/optimization-1/)
 
-### 1.2.4 [**Implement**](https://www.geeksforgeeks.org/ml-stochastic-gradient-descent-sgd/?ref=rp):  
+### 1.2.4 [**Implement**](https://www.geeksforgeeks.org/ml-stochastic-gradient-descent-sgd/?ref=rp):
+[Implement in python](https://towardsdatascience.com/gradient-descent-in-python-a0d07285742f)  
 #### [Three variants of GD](https://www.geeksforgeeks.org/ml-mini-batch-gradient-descent-with-python/?ref=rp)
   - [**Batch Gradient Descent**](https://ruder.io/optimizing-gradient-descent/index.html#gradientdescentvariants)
   - **Stochastic Gradient Descent**- one random sample
@@ -57,3 +58,4 @@ the gradient** and then performing a parameter update is called Gradient Descent
 
 ![picture 15](../../images/ddb5521dee7d0c16b23a072b54e022445d5f183511d19198f5ca4b8383bfdfd8.png)  
 ![picture 16](../../images/652fbb205d14fdb71591ea5583e24ce27b118a0ea28b3d9e97e2b908395dac84.png)  
+

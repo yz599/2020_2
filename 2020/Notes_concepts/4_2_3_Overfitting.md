@@ -41,7 +41,6 @@ High-variance machine learning algorithms include:
 - k- Nearest Neighbors and 
 - Support Vector Machines
 
-### 1.2.2 Bia and variance of model
 
 
 
@@ -69,10 +68,10 @@ Demonstrated by a two dim cases,[x1,x2],
 ![picture 24](../../images/e70e24de974a697bd03f2d53371e41417f2404e06f02f4d2d3009255c5078042.png)  
 
 
-### 1.3.2 L1/L2 regularization and PCA
+### PCA
 [Other regularization](https://en.wikipedia.org/wiki/Regularization_(mathematics)#Classification)
 ![picture 3](../../images/fb23b13f94a92b1dbf58cf9c0493063ef4daccd92903c0339331e87f5f013ff4.png)  
 
 
-
+# 3. Data leakage
 

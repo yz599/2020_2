@@ -1,7 +1,7 @@
 # [1. Overview-Important distributions](https://jonathan-hui.medium.com/machine-learning-summary-fundamental-6562ff7448a)
 ![picture 3](../../images/3385c70114c7592013958a97b31d244d5b2f3d44a3b6f944a4c711481e6603a5.png)  
 
-|   |   |
+| Dist  |Expression   |
 |---|---|
 | Bernoulli Dist   | ![picture 9](../../images/a83afe190779eaec6bf7fc12e082f5d2e649b9fa7f167f82bc0730fcbed6b0e0.png)  |   
 | Binomial Dist  |![  1](../../images/9a0c8c0f3c48bd139a2521872dd7cd06881e3aff0ae50e9d490116f9d96bc8d0.png)    |   
