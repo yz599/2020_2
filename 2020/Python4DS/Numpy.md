@@ -24,7 +24,7 @@ numpy.arange([start, ]stop, [step, ], dtype=None)
 - Float: (0,1) - randn(N)/rand(uniform)/random/sample/random_sample
 
 > Initialize weights of the model
->
+
 
 
 ### 1.2.2 from array

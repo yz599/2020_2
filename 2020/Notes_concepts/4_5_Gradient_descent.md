@@ -1,33 +1,33 @@
 ## 1.2 Gradient descent
+Now that we can compute the gradient of the loss function, the procedure of **repeatedly evaluating 
+the gradient** and then performing a parameter update is called Gradient Descent.  
 ### 1.2.1 [Optimization](https://ruder.io/optimizing-gradient-descent/)
 - **Target**: find **theta** to minimize value of cost function   
 - **Why**: Minimize loss function
 ![picture 49](../../images/de86d5d51416a6154ae8bc27e2e5a7be8067be69c7583b3bd8cdb2375576ed7d.png)  
 ### 1.2.2 How
 - **How**: move **theta** in a specific direction [gradient] to efficiently minimize loss function **from initial position**  
+- **Attention**: and make sure all training data is included to find the optimal solution for them
 
-  - **loss function** - minimize
-  - **gradient** of loss function
-    - training data
+ 1. **loss function** - minimize
+ 2. **gradient** of loss function
+    - training data 
     - ethta
-    ![](.ML_concepts_images/e693ea8e.png)
-  - **learning rate** speed/(-)direction
-  - **Initializing ethta** High position
-  - **Relationship between each iteration**  站在上一个点 求导和往下走
-  <font color='red'>_**ethta2= **ethta1** -lr*gradient@**ethta1**_</font>  
-  ![](.ML_concepts_images/4575c2c2.png)
+ 3. **learning rate** speed/(-)direction
+ 4. **Initializing theta** Random position
+ 5. **Relationship between each iteration**  站在上一个点 求导和往下走  
+     <font color='red'>_**ethta2= **ethta1** -lr*gradient@**ethta1**_</font>  
+ 6. **<font color='red'>Relationship with training data**  
+   (each **epoch** going through all the training data since the solution "ideally should" be optimal solution for all datapoint)**
+    - Three ways (batch, mini-batch,stochastic)
+    - Different is how many training data is used to update theta at each iteration until find the optimal value
+                                                                                                                                                                                                
+![](.4_5_Gradient_descent_images/b2d2803f.png)![](.4_5_Gradient_descent_images/30d628cb.png)   
+  
   [Reference](https://towardsdatascience.com/implement-gradient-descent-in-python-9b93ed7108d1)                                                                                                                                                                                                                                                                                                                                                    
+><font color='red'>Position of theta is impacted by the X as well (mini-batch, stochastic and batch) 
 
-### 1.2.3 **Explanation of N in the equation**  
-![picture 8](../../images/1f414a3db11ba47069131ae8b877d90cf5b5f7a26b32868ab3903fe7a57403de.png) 
-![](.ML_concepts_images/2728518c.png)
-![](.ML_concepts_images/c2e62588.png)
-### 1.2.3 Normalization                                                                                                                                                                                                                                                                                                                                                                  
-![](.ML_concepts_images/f025ba49.png)                                                                                                                                                                                                                                                                                                                                                                  
-Now that we can compute the gradient of the loss function, the procedure of **repeatedly evaluating 
-the gradient** and then performing a parameter update is called Gradient Descent. [Reference](https://cs231n.github.io/optimization-1/)
-
-### 1.2.4 [**Implement**](https://www.geeksforgeeks.org/ml-stochastic-gradient-descent-sgd/?ref=rp):
+### 1.2.3 [**Implement**](https://www.geeksforgeeks.org/ml-stochastic-gradient-descent-sgd/?ref=rp):
 [Implement in python](https://towardsdatascience.com/gradient-descent-in-python-a0d07285742f)  
 #### [Three variants of GD](https://www.geeksforgeeks.org/ml-mini-batch-gradient-descent-with-python/?ref=rp)
   - [**Batch Gradient Descent**](https://ruder.io/optimizing-gradient-descent/index.html#gradientdescentvariants)
@@ -40,8 +40,8 @@ the gradient** and then performing a parameter update is called Gradient Descent
     Performs an update for every mini-batch of n training examples:
     >The size of the mini-batch is a hyperparameter but it is not very common to cross-validate it.   
                                                                                                                                                                                                
-                                                                                                                                                                                               
-![](.ML_concepts_images/1b843166.png)
+
+><font color='red'>Position of theta is impacted by the X as well (mini-batch, stochastic and batch)  
 
 |   |   |   |
 |---|---|---|
@@ -58,4 +58,23 @@ the gradient** and then performing a parameter update is called Gradient Descent
 
 ![picture 15](../../images/ddb5521dee7d0c16b23a072b54e022445d5f183511d19198f5ca4b8383bfdfd8.png)  
 ![picture 16](../../images/652fbb205d14fdb71591ea5583e24ce27b118a0ea28b3d9e97e2b908395dac84.png)  
+![](.4_5_Gradient_descent_images/1291a8bb.png)
+![](.4_5_Gradient_descent_images/0845f601.png)
+[Reference](https://www.ritchieng.com/machine-learning-resources/)
+
+### 1.2.4 **Explanation of N in the equation**  
+![picture 8](../../images/1f414a3db11ba47069131ae8b877d90cf5b5f7a26b32868ab3903fe7a57403de.png) 
+![](.ML_concepts_images/2728518c.png)
+![](.ML_concepts_images/c2e62588.png)
+
+ **One sample example**
+ ![](.ML_concepts_images/4575c2c2.png)
+
+### 1.2.5 Understand theta
+![](.ML_concepts_images/e693ea8e.png)
+
+### 1.2.6 Normalization                                                                                                                                                                                                                                                                                                                                                                  
+![](.ML_concepts_images/f025ba49.png)                                                                                                                                                                                                                                                                                                                                                                  
+ 
+[Reference](https://cs231n.github.io/optimization-1/)
 

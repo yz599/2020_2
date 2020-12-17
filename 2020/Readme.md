@@ -3,10 +3,11 @@ This reporsitory includes my study notes of machine learning and here gives the 
 # 1. Statistical
 ## 1.1 [Bayes inference](https://github.com/yz599/2020_2/blob/master/2020/Notes_concepts/1_1_Bayes_inference.md)
 ## 1.2 [MLE/MAP_cost_function](https://github.com/yz599/2020_2/blob/master/2020/Notes_concepts/1_2_Entropy_map_mle.md)
-## 1.3 Statistical inference
-### 1.3.1 Typical distributions
+## 1.3 Probability and inference
+### 1.3.1 [Important distributions](https://github.com/yz599/2020_2/blob/master/2020/Notes_concepts/1_3_Important_distribution.md)
 ### 1.3.2 A/B test
-### 1.3.3 Statistical inference
+### 1.3.3 [Statistical inference](https://github.com/yz599/2020_2/blob/master/2020/Notes_concepts/1_Statistical.md)
+#### [Confidence interval](https://github.com/yz599/2020_2/blob/master/2020/Notes_concepts/1_0_My_thoughts.md)
 ## 1.4 Experimental design
 # 2. [Linear algebra](https://github.com/yz599/2020_2/blob/master/2020/Notes_concepts/2_Linear_Algebra.md)
 # 3. Optimization
@@ -27,3 +28,5 @@ This reporsitory includes my study notes of machine learning and here gives the 
 
 # 6. SQL
 # 7. Algorithms - leetcode
+# 8. Important reference
+[Study note](https://www.ritchieng.com/machine-learning-resources/)
