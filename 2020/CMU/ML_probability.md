@@ -21,7 +21,7 @@ _**The 4th column shows share of the examples and hence the table is actually a 
 ![](.ML_probability_images/5e005ff3.png)
 
 
-1.	Suppose we want to learn the function f: <G, H> —>W >>
+1.	Suppose we want to learn the function f: <G, H> —>W
 
 2.	Equivalently, P(W | G, H)   Solution: learn joint distribution from data, calculate P(W | G, H)   
 

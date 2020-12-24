@@ -6,7 +6,9 @@ This reporsitory includes my study notes of machine learning and here gives the 
 ## 1.3 Probability and inference
 ### 1.3.1 [Important distributions](https://github.com/yz599/2020_2/blob/master/2020/Notes_concepts/1_3_Important_distribution.md)
 ### 1.3.2 A/B test
-### 1.3.3 [Statistical inference](https://github.com/yz599/2020_2/blob/master/2020/Notes_concepts/1_Statistical.md)
+### 1.3.3 [Statistical inference](https://github.com/yz599/2020_2/blob/master/2020/Notes_concepts/1_3_3_Statistical_inference.md)
+#### [IID assumption](https://github.com/yz599/2020_2/blob/master/2020/Notes_concepts/1_0_My_thoughts.md)
+#### [Normality assumption](https://github.com/yz599/2020_2/blob/master/2020/Notes_concepts/1_0_My_thoughts.md)
 #### [Confidence interval](https://github.com/yz599/2020_2/blob/master/2020/Notes_concepts/1_0_My_thoughts.md)
 ## 1.4 Experimental design
 # 2. [Linear algebra](https://github.com/yz599/2020_2/blob/master/2020/Notes_concepts/2_Linear_Algebra.md)

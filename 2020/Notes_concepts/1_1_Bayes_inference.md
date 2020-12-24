@@ -1,5 +1,7 @@
 # 1. Bayes' Inference - Prior assumption
 
+
+
 ## 1.1 Three probabilities
 ### <font color='red'>Joint probability</font>  
 ![](.ML_images/72a180c1.png)  
@@ -12,10 +14,22 @@
 The marginal probability P(X) is computed by summing (or integrating) the joint probability over other variables.
 ![](https://miro.medium.com/max/1400/1*l_fRRvAVcm6ueQ8STOhxUA.jpeg)
 
-In many ML problems, we build a **joint distribution model** for all the variables. Once it is modeled, we can inference the probability of a single or a subset of variables (p(x₁) or p(x₁, x₂, x₃)) by summing or integrating over the rest of the variables.  
+In many ML problems, we build a **joint distribution model** for all the variables. 
+Once it is modeled, we can inference the probability of 
+a single or a subset of variables (p(x₁) or p(x₁, x₂, x₃)) by summing or integrating over the rest of the variables.  
 
 ![](https://miro.medium.com/max/1400/1*r02pso6WHFOa2UoFZfMbiw.jpeg)
 
+---
+### Illustration by bivariate Gaussian:
+![](.1_1_Bayes_inference_images/3e33fe87.png)
+
+
+![](.1_1_Bayes_inference_images/6c5bfb88.png) 
+
+**<font color='red'>- explains why Ellipse**
+
+![](.1_1_Bayes_inference_images/5f58de09.png)
 ## <font color='red'>1.2 Bayes' Rule  
 ![](.ML_images/3ce444f9.png)
 ![](https://miro.medium.com/max/1400/1*a1q29H0SfIAfC7Ozub8XrA.jpeg)

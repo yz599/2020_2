@@ -1,0 +1,325 @@
+\title{CS 613 - Machine Learning}
+\author{
+        Assignment 2 - Classification
+}
+\date{}
+\documentclass[12pt]{article}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{listings}
+
+\includecomment{versionB}
+%\excludecomment{versionB}
+
+\begin{document}
+\maketitle
+
+
+\section*{Introduction}
+In this assignment you will perform classification using Logistic Regression, Naive Bayes and Decision Tree classifiers.  You will run your implementations on  a binary class dataset and report your results.\\
+
+\noindent
+You may \textbf{not} use any functions from a ML library in your code unless explicitly told otherwise.  
+
+\section*{Grading}
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Part 1 (Theory) & 15pts \\
+Part 2 (Logistic Regression) & 15pts\\
+Part 3 (Spam Logistic Regression) & 10pts\\
+Part 4 (Naive Bayes) & 25pts\\
+Part 5 (Decision Trees) & 25pts\\
+Report & 10pts\\
+\hline
+\textbf{TOTAL} & 100\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\newpage
+\section*{Datasets}
+\paragraph{Iris Dataset  (sklearn.datasets.load\_iris)}
+The Iris flower data set or Fishers Iris data set is a multivariate data set introduced by the British statistician and biologist Ronald Fisher in his 1936 paper The use of multiple measurements in taxonomic problems as an example of linear discriminant analysis.
+
+The data set consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica and Iris versicolor). Four features were measured from each sample: the length and the width of the sepals and petals, in centimeters.
+
+\noindent
+The iris data set is widely used as a beginner's dataset for machine learning purposes. The dataset is included in the machine learning package Scikit-learn, so that users can access it without having to find a source for it. The following python code illustrates usage.
+
+\begin{lstlisting}
+from sklearn.datasets import load_iris
+iris = load_iris()
+\end{lstlisting}
+
+
+\paragraph{Spambase Dataset  (spambase.data)}
+This dataset consists of 4601 instances of data, each with 57 features and a class label designating if the sample is spam or not.
+The features are \emph{real valued} and are described in much detail here:
+\begin{center}
+  https://archive.ics.uci.edu/ml/machine-learning-databases/spambase/spambase.names\\
+\end{center}
+
+\noindent
+Data obtained from:  https://archive.ics.uci.edu/ml/datasets/Spambase
+
+
+\newpage
+\section{Theory}
+\begin{enumerate}
+\item Consider the following set of training examples for an unknown target function:  $(x_1, x_2)\rightarrow y$:
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Y & $x_1$ & $x_2$ & Count\\
+\hline
++ & T & T & 3\\
++ & T & F & 4\\
++ & F & T & 4\\
++ & F & F & 1\\
+- & T & T & 0\\
+- & T & F & 1\\
+- & F & T & 3\\
+- & F & F & 5\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+	\begin{enumerate}
+	\item What is the sample entropy, $H(Y)$ from this training data (using log base 2) (2pts)?
+	\item What are the information gains for branching on variables $x_1$ and $x_2$ (2pts)?
+	\item Draw the deicion tree that would be learned by the ID3 algorithm without pruning from this training data (3pts)?
+	\end{enumerate}
+	
+\item We decided that maybe we can use the number of characters and the average word length an essay to determine if the student should get an $A$ in a class or not.  Below are five samples of this data:
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\# of Chars & Average Word Length & Give an A\\
+\hline
+216 & 5.68 & Yes\\
+69 & 4.78 & Yes\\
+302 & 2.31 & No \\
+60 & 3.16 & Yes \\
+393 & 4.2 & No\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+	\begin{enumerate}
+	\item What are the class priors, $P(A=Yes), P(A=No)$? (2pt)
+	\item Find the parameters of the Gaussians necessary to do Gaussian Naive Bayes classification on this decision to give an A or not.  Standardize the features first over all the data together so that there is no unfair bias towards the features of different scales (2pts).
+	\item Using your response from the prior question, determine if an essay with 242 characters and an average word length of 4.56 should get an A or not (3pts).
+	\end{enumerate}
+\item Consider the following questions pertaining to a k-Nearest Neighbors algorithm (1pt):
+	\begin{enumerate}
+	\item How could you use a \emph{validation set} to determine the user-defined parameter $k$?
+	\end{enumerate}
+\end{enumerate}
+
+
+\newpage
+\section{Logistic Regression}\label{naive}
+Let's train and test a \emph{Logistic Regression Classifier} to classify flowers from the Iris Dataset.\\
+
+\noindent
+First download import the data from sklearn.datasets.  As mentioned in the Datasets area,  The data set consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica and Iris versicolor). Four features were measured from each sample: the length and the width of the sepals and petals, in centimeters.  We will map this into a binary classification problem between Iris setosa versus Iris virgincia and versicolor.  We will use just the first 2 features, width and length of the sepals.  
+
+For this part, we will be practicing gradient descent with logistic regression.
+
+Use the following code to load the data, and binarize the target values.
+
+\begin{lstlisting}
+iris = skdata.load_iris()
+X = iris.data[:, :2]
+y = (iris.target != 0) * 1
+\end{lstlisting}
+
+\noindent
+\paragraph{Write a script that:}
+\begin{enumerate}
+  \item Reads in the data with the script above.
+  \item Standardizes the data using the mean and standard deviation
+\item Initialize the parameters of $\theta$ using random values in the range [-1, 1]
+\item Do \textbf{batch} gradient descent
+\item Terminate when absolute value change in the loss on the data is less than $2^{-23}$, or after $10,000$ iterations have passed (whichever occurs first).
+\item Use a learning rate $\eta=0.01$.
+  \item While the termination criteria (mentioned above in the implementation details) hasn't been met
+  \begin{enumerate}
+  	\item Compute the loss of the data using the logistic regression cost
+  	\item Update each parameter using \emph{batch} gradient descent
+  \end{enumerate}
+\end{enumerate}
+
+Plot the data and the decision boundary using matplotlib.  Verify your solution with the LogisticRegression sklearn method.
+
+\begin{lstlisting}
+from sklearn.linear_model import LogisticRegression
+lgr = LogisticRegression(penalty='none',solver='lbfgs',max_iter=10000)
+lgr.fit(X,y)
+\end{lstlisting}
+
+In your writeup, present the thetas from gradient descent that minimize the loss function as well as plots of your method versus the built in LogisticRegression method.
+
+\newpage
+\section{Logistic Regression Spam Classification}
+Let's train and test a \emph{Logistic Regression Classifier} to classifiy Spam or Not from the Spambase Dataset.\\
+
+\noindent
+First download the dataset \emph{spambase.data} from Blackboard.  As mentioned in the Datasets area, this dataset contains 4601 rows of data, each with 57 continuous valued features followed by a binary class label (0=not-spam, 1=spam).  There is no header information in this file and the data is comma separated.  \\
+
+\noindent
+\paragraph{Write a script that:}
+\begin{enumerate}
+  \item Reads in the data.
+  \item Randomizes the data.
+  \item Selects the first 2/3 (round up) of the data for training and the remaining for testing (you may use  \textbf{sklearn train\_test\_split} for this part)
+  \item Standardizes the data (except for the last column of course) using the training data
+  \item Initialize the parameters of $\theta$ using random values in the range [-1, 1]
+\item Do \textbf{batch} gradient descent
+\item Terminate when absolute value change in the loss on the data is less than $2^{-23}$, or after $1,500$ iterations have passed (whichever occurs first, this will likely be a slow process).
+\item Use a learning rate $\eta=0.01$.
+  \item Classify each testing sample using the model and choosing the class label based on which class probability is higher.
+  \item Computes the following statistics using the testing data results:
+    \begin{enumerate}
+        \item Precision
+        \item Recall
+        \item F-measure
+        \item Accuracy
+    \end{enumerate}
+\end{enumerate}
+
+
+\paragraph{Implementation Details}
+\begin{enumerate}
+\item Seed the random number generate with zero prior to randomizing the data
+\item There are a lot of $\theta$s and this will likely be a slow process
+\end{enumerate}
+
+\paragraph{In your report you will need:}
+\begin{enumerate}
+\item The statistics requested for your Logistic classifier run.
+\end{enumerate}
+
+\newpage
+
+
+\section{Naive Bayes Classifier}\label{naive}
+Let's train and test a \emph{Naive Bayes Classifier} to classifiy Spam or Not from the Spambase Dataset.\\
+
+\noindent
+First download the dataset \emph{spambase.data} from Blackboard.  As mentioned in the Datasets area, this dataset contains 4601 rows of data, each with 57 continuous valued features followed by a binary class label (0=not-spam, 1=spam).  There is no header information in this file and the data is comma separated.  As always, your code should work on any dataset that lacks header information and has several comma-separated continuous-valued features followed by a class id $\in {0,1}$.\\
+
+\noindent
+\paragraph{Write a script that:}
+\begin{enumerate}
+  \item Reads in the data.
+  \item Randomizes the data.
+  \item Selects the first 2/3 (round up) of the data for training and the remaining for testing
+  \item Standardizes the data (except for the last column of course) using the training data
+  \item Divides the training data into two groups: Spam samples, Non-Spam samples.
+  \item Creates Normal models for each feature for each class.
+  \item Classify each testing sample using these models and choosing the class label based on which class probability is higher.
+  \item Computes the following statistics using the testing data results:
+    \begin{enumerate}
+        \item Precision
+        \item Recall
+        \item F-measure
+        \item Accuracy
+    \end{enumerate}
+\end{enumerate}
+
+
+\paragraph{Implementation Details}
+\begin{enumerate}
+\item Seed the random number generate with zero prior to randomizing the data
+\item You may want to consider using the log-exponent trick to avoid underflow issues.  Here's a link about it:  https://stats.stackexchange.com/questions/105602/example-of-how-the-log-sum-exp-trick-works-in-naive-bayes
+\item If you decide to work in log space, realize that python interprets $0log0$ as inf.  You should identify this situation and either add an EPS (very small positive number) or consider it to be a value of zero.
+\end{enumerate}
+
+\paragraph{In your report you will need:}
+\begin{enumerate}
+\item The statistics requested for your Naive Bayes classifier run.
+\end{enumerate}
+
+\newpage
+
+\section{Decision Trees}\label{naive}
+Let's train and test a \emph{Decision Tree} to classify Spam or Not from the Spambase Dataset.\\
+
+
+\noindent
+\paragraph{Write a script that:}
+\begin{enumerate}
+  \item Reads in the data.
+  \item Randomizes the data.
+  \item Selects the first 2/3 (round up) of the data for training and the remaining for testing
+  \item Standardizes the data (except for the last column of course) using the training data
+  \item Divides the training data into two groups: Spam samples, Non-Spam samples.
+  \item Trains a decision tree using the ID3 algorithm without any pruning.
+  \item Classify each testing sample using your trained decision tree.
+  \item Computes the following statistics using the testing data results:
+    \begin{enumerate}
+        \item Precision
+        \item Recall
+        \item F-measure
+        \item Accuracy
+    \end{enumerate}
+\end{enumerate}
+
+
+\paragraph{Implementation Details}
+\begin{enumerate}
+\item Seed the random number generate with zero prior to randomizing the data
+\item Depending on your perspective, the features are either continuous or finite discretize.  The latter can be considered tru since the real-values are just the number of times a feature is observed in an email, normalized by some other count.  That being said, for a decision tree we normally use categorical or discretized features.  \textbf{So for the purpose of this dataset, look at the range of each feature and turn them into binary features by choosing a threshold.  I suggest using the median or mean.}  
+\end{enumerate}
+\paragraph{In your report you will need:}
+\begin{enumerate}
+\item The statistics requested for your Decision Tree classifier run.
+\end{enumerate}
+
+
+\newpage
+\section*{Submission}
+For your submission, upload to Blackboard a single zip file containing:
+
+\begin{enumerate}
+\item PDF Writeup
+\item Python notebook Code
+\end{enumerate}
+
+
+\noindent
+The PDF document should contain the following:
+
+\begin{enumerate}
+\item Part 1:
+	\begin{enumerate}
+	\item Answers to Theory Questions
+	\end{enumerate}
+\item Part 2:
+	\begin{enumerate}
+	\item Requested Logistic Regression thetas and plots
+	\end{enumerate}
+\item Part 3:
+	\begin{enumerate}
+	\item Requested Classification Statistics
+	\end{enumerate}
+\item Part 4:
+	\begin{enumerate}
+	\item Requested Classification Statistics
+	\end{enumerate}
+\item Part 5:
+	\begin{enumerate}
+	\item Requested Classification Statistics
+	\end{enumerate}
+\end{enumerate}
+\end{document}
+

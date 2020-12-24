@@ -6,40 +6,38 @@
   - The average Xn bar could be learned from this **one-time n samples** as Normal distribution
 
 
-## 1.1 The IID assumption
+## 1.1 The IID assumption/conditionally independent
 
-## 1.2 Statistical inference
+## 1.2 Normality assumption
+- Raw data is typically **not normally distributed**
+- **Errors** and averages and totals in large samples are
+
+## 1.3 Statistical inference
 - Statistical inference is the process of using data analysis to **deduce** properties of an underlying distribution of probability.
 - Inferential statistical analysis infers properties of a **population**, for example by testing hypotheses and deriving estimates.
 - In **machine learning**, the term inference is sometimes used instead to mean **"make a prediction, by evaluating an already trained model"**
 
-## 1.3 Foundation of parametric test
+## 1.4 Foundation of parametric test
 Assumptions of parametric test： 
 
-## 1.4 **Confidence interval:**   
+## 1.5 **Confidence interval:**   
 **95% confidence interval has two means:**
 - a 95% CI computed from a normal sample distribution (Xbar - Normal(miu,std/n)) - CLT
 - a probability of repeated CIs (Samples) that contain true parameter
 
-Similarly:  
 **Sampling error**
 - A single sample - CLT
 - Repeated sampling to get sampling distribution of statistic
+----
 
-## Assumptions:
-When constructing confidence intervals the assumptions and conditions of the central limit theorem must be met in order to use the normal model.
-### 1.4.1 Inference Statistics
-Point estimate like xbar = 2.2 carries no information about **its accuracy**  
-Taken together the width of the interval and the confidence level provide a measure on the 
-strength of the evidence supporting the hypothesis that the µ is close to our estimate x  
-- Its interval **statistcs**
-- It's inference statistics not descriptive xbar-miu
 - [Uncertainty of the sampling process/algorithm to obtain the sample that create the interval](https://thestatsninja.com/2019/02/19/how-to-navigate-confidence-intervals-with-confidence/)
 - [Confidence interval varies with sample ](https://www.statisticssolutions.com/misconceptions-about-confidence-intervals/)  
   - sampling causes error/variation in confidence interval
 - The logic of confidence intervals is based on long-run results — frequentist inference
 - <font color='red'>Our confidence is in the procedures/algrithm of data sampling</font>
 ---
+
+## 1.6 Interpretation of CI
 <font color='red'>**Repeated sampling:**</font>
   - The **confidence level** represents the theoretical **long-run frequency** (i.e., the proportion) of confidence intervals 
 that contain the true value of the unknown population parameter.
@@ -59,7 +57,7 @@ that contain the true value of the unknown population parameter.
   the probability is 95% that the **yet-to-be-calculated** interval will cover the true value: 
   at this point, the limits of the interval are yet-to-be-observed random variables.
      >Like before you flip the coin, 0.5 chance you get a head but after you flip the coin, it's either head or tail
-3. **After select sample (combine 1+2)**:   
+3. **After select sample (foundation of hypothesis test)**:   
 "The confidence interval represents values for the population parameter for which the difference between the parameter and the observed estimate is 
 not statistically significant at the 10% level".
 4. **Interpret hypothesis testing**  
@@ -71,7 +69,7 @@ which had a probability of 10% (or less) of happening by chance.
 <font color='red'>**How**</font>   
 
 - Sampling distribution of Xbar is normal dist(u,std/n), it's 95% CI could be easily computed 
-- Std/n represents the sampling error which is related to sample size n, large n, small variation 
+- Std/n represents the sampling error which is related to sample size n, large n, small variation **use one sample to estimate(CLT)**
 - Why one sample could be used for hypothesis test...See above
 
 
@@ -79,7 +77,7 @@ Most people don’t want to take 1000 new samples and plot the histogram,  so th
 I’m going to assume that the SD of this sample (remember that SE = SD / SqRT(N) ) is representative of the SD of the population, 
 and then I’ll just build a confidence interval around my sample mean, and +/- 2*SE should give me a range that it 95% likely to contain the true mean.
 
-<font color='red'>**Why2**</font> 
+<font color='red'>**Why2-(compare with coin fliping)**</font> 
 > - Think about this as the probability of the **to-be-select**-event is 95%; 
 > - event is when you **select one sample** from the (selected)100 samples, the CI computed from the sample contain the true parameter..
   
@@ -107,7 +105,7 @@ So if you randomly select one sampling (corresponding CI), the pre-known probabi
 - A particular confidence interval of 95% calculated from an experiment does not mean that there is a 95% probability of a sample parameter 
 from a repeat of the experiment falling within this interval.
 
-### 1.4.2 Confidence interval and hypothesis test
+## 1.7 Confidence interval (P-value) and hypothesis test
 Hypothesis tests based on statistical significance are another way of expressing confidence intervals (more precisely, confidence sets). In other words, every hypothesis test based on significance can be obtained via a confidence interval, and every confidence interval can be obtained via a hypothesis test based on significance.
 
 #### P value
