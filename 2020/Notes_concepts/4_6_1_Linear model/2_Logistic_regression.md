@@ -15,6 +15,14 @@
 **<font color='red'>Naive Bayes Classifier**
 ![](.2_Logistic_regression_images/e59f5e5f.png)
 
+## 1.3 Assume Gaussian dist of features - **Generative model**
+- Split the data by class and build 
+- <font color='red'>two features x=(sp Defence, Defense)
+![](.2_Logistic_regression_images/1ada7588.png)
+![](.2_Logistic_regression_images/da0b66b3.png)
+![](.2_Logistic_regression_images/7c343711.png)
+
+![](.2_Logistic_regression_images/e408a2c8.png)
 # 2. Cost function
 ## 2.1 MLE - maximize log likelihood
 - One observation - binomial dist  
