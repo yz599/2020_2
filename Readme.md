@@ -21,6 +21,7 @@ This reporsitory includes my study notes of machine learning and here gives the 
 ## 4.5 [Gradient descent](https://github.com/yz599/2020_2/blob/master/2020/Notes_concepts/4_5_Gradient_descent.md)
 ## 4.6 Machine learning algorithms
 ### 4.6.1 [Linear model](https://github.com/yz599/2020_2/tree/master/2020/Notes_concepts/Linear%20model)
+#### [Linear regression](https://github.com/yz599/2020_2/blob/master/2020/Notes_concepts/4_6_1_Linear%20model/Linear_model.md)
 ### 4.6.5 Feature Engineering
 # 5. Python for data science
 ## 5.1 [Pandas](https://github.com/yz599/2020_2/tree/master/2020/Python/Pandas)

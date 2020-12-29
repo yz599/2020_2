@@ -23,14 +23,28 @@
 - Homoscedasticity: The variance of residual is the same for any value of X.
 - **Independence/non-correlate:**    Observations are independent of each other.
 - Normality: For any fixed value of X, Y is normally distributed.
+
+![picture 12](../../../images/cecef8616b753f2c80e89d06ff2b7a48849495d51d1086c9da4da553795111b0.png)  
+
+[Homoscedasticity:](https://www.statisticssolutions.com/homoscedasticity/)
+![picture 14](../../../images/47d28fad8f0f517bef94cead47fb546ddc263d4a4a6c337679b38a7576f8e0a3.png)  
+
+> - describes a situation in which the error term (that is, the “noise” or random disturbance in the relationship between the independent variables and the dependent variable) is the same **across all values** of the independent variables.
+
+ >- **OLS regression** gives **equal weight** to all observations, but when heteroscedasticity is present, the cases with larger disturbances have more “pull” than other observations. 
+
+ > - heteroscedasticity = standard errors are biased.  Because the standard error is central to conducting significance tests and calculating confidence intervals.
+
 #### OLS and MLE
 #### [Coefficient of Determination - r-squared](https://online.stat.psu.edu/stat462/node/95/)
 ![](.Linear_model_images/6aa669f1.png)  
+![picture 13](../../../images/2a2ebaf1f557bbc26fae0e76ad6795360882811deb1e9c978e7d0c9d00288eb0.png)  
 
 <font color='red'>**SSTO = SSR + SSE**</font>
 - SSR is the "regression sum of squares" and quantifies how far the estimated sloped regression line, y^i, is from the horizontal "no relationship line," the sample mean or y-.
 - SSE is the "error sum of squares" and quantifies how much the data points, yi, vary around the estimated regression line, y^i.
 - SSTO is the "total sum of squares" and quantifies how much the data points, yi, vary around their mean, y-.
+
 
 ![](.Linear_model_images/feaf9718.png)  
 
