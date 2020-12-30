@@ -7,7 +7,13 @@
 
 
 ## 1.1 The IID assumption/conditionally independent
+### 1.1.1 Navie bayesian  
+![](4_6_2_tree_model/.1_Navive_Bayesian_classification_images/f685ddae.png)
+![](4_6_2_tree_model/.1_Navive_Bayesian_classification_images/a9cae11f.png)
 
+- a **special case of decision tree** with features that are **conditionally independent**
+### 1.1.2 Logistic regression
+![](.1_0_My_thoughts_images/0b28e9c5.png)
 ## 1.2 Normality assumption
 - Raw data is typically **not normally distributed**
 - **Errors** and averages and totals in large samples are

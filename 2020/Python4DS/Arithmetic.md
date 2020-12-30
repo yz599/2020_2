@@ -84,7 +84,7 @@ Different from numpy array the column should match as well...so
 ![](.Arithmetic_images/3eb9c517.png)![](.Arithmetic_images/31bf59ad.png)
 
 
-##2.2 1_D to 2_D/row2col
+## 2.2 1_D to 2_D/row2col
 ![](.Arithmetic_images/35bb9d05.png)
 
 

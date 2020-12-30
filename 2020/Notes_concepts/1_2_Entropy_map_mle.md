@@ -220,10 +220,18 @@ We compute the probability of a variable by summing everything else out.
 ### **Cost function is equivalent to (derived from) MLE and MAP (with regularization)**
 ### 2.3.1 Linear regression
 ![](.Neural_net_work_images/175201d6.png)
+
 ### 2.3.2 Classification - minimize cross entropy  
 
-![](.1_2_Entropy_map_mle_images/2bee6bd4.png)
+![](.1_2_Entropy_map_mle_images/04b7743c.png)
 
+  
+
+<font color='Green'>Bernoulli Dist   
+![picture 9](../../images/a83afe190779eaec6bf7fc12e082f5d2e649b9fa7f167f82bc0730fcbed6b0e0.png)
+![](.1_2_Entropy_map_mle_images/3dc9c7c2.png)
+---
+![](.1_2_Entropy_map_mle_images/2bee6bd4.png)
+<font color='Green'>**a sequence of Bernoulli trials** 
 ![](.1_2_Entropy_map_mle_images/01bd2746.png)
 
-![picture 4](../../images/459ded598b7f5779a9866eb3f01606e9b79756e2a2a4c3dd6f159e460c574b33.png)  

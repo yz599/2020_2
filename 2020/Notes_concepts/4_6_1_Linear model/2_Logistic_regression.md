@@ -23,18 +23,30 @@
 ![](.2_Logistic_regression_images/7c343711.png)
 
 ![](.2_Logistic_regression_images/e408a2c8.png)
-# 2. Cost function
-## 2.1 MLE - maximize log likelihood
+# 2. Cost function - observations are conditionally independent of one another
+## 2.1 A sequence of Bernoulli trials
+![](.2_Logistic_regression_images/0bb168be.png)  
+
+Recall that in **a sequence of Bernoulli trials** y1,... yn, where there is a constant
+probability of success p, the likelihood is
+![](.2_Logistic_regression_images/a1b9be9d.png)
+
+>Originally, yi gives the **occurrences of the event**, when inference to **a single event**, yi should 
+be the **probability of occurrences y** of the event..
+>- which is the **true P** -- y is the real occurrence of the event determined by dataset)
+
+## 2.2 MLE - (conditional) likelihood function
 - One observation - binomial dist  
-MLE - ![](.2_Logistic_regression_images/9dd34ee1.png)  
-Log - ![](.2_Logistic_regression_images/416c68bc.png)
+![](.2_Logistic_regression_images/9dd34ee1.png)  
+
+![](.2_Logistic_regression_images/416c68bc.png)
 
 - Entire dataset  
-`Observation are conditionally independent of one another`
+**<font color='red'>Observation are conditionally independent of one another</font>**
 ![](.2_Logistic_regression_images/87371a70.png)  
 ![](.2_Logistic_regression_images/4bc008ef.png)
 
-## 2.2 Gradient  
+## 2.3 Gradient  
 ![](.2_Logistic_regression_images/54a9ab54.png) 
 
 **<font color='red'>This is (almost) the same form as the least squared

@@ -90,6 +90,8 @@ We assume that:
 
 ![picture 16](../../../images/64f17574ac53fae49e5e289bcd1c012710a6cc3be44c3be3e6fdbda0c69e6a57.png)  
 
+><font color='red'>Now, as the denominator remains constant for a given input, we can remove that term:</font>
+
 ![picture 17](../../../images/e70bbca79a6e5b1ad949062dca99b976a7c5b82a1653bca8eb6b277ca360ca4a.png)  
 
 ![picture 18](../../../images/aa009887a834b3adfcae68ea62f08c5f069eacdaf9e972a4a84435d0cb6dde08.png)  
