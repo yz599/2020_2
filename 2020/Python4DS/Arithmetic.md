@@ -1,7 +1,9 @@
 # Rules of broadcasting
-- two have different dimensions
-- row-wise if match
-- otherwise broadcasting
+- **matrix + array"** either match the row or the column dimension....
+- anything + scalar  
+- row +column  
+![](.Arithmetic_images/8d3d3f47.png)![](.Arithmetic_images/c179407f.png)
+
 # 1. Broadcasting
 ## 1.1 Rules
 **Rule 1:** If the two arrays differ in their number of dimensions, 
@@ -67,16 +69,18 @@ Different from numpy array the column should match as well...so
 ![](.Arithmetic_images/7f0bfac8.png)![](.Arithmetic_images/d0b16e87.png)
 # 2. Dimension of array
 ## 1_D
+- creation 
+- indexing
 
-| functions  |Dimension   | 
+| functions  |Dimension   |
 |---|---|
 |np.arange   |1-D   | 
 |np.linspace   | 1-D  | 
-|Other   |size=scalar 1-D/tuple 2_D | 
+|Other   |size=scalar 1-D/**tuple 2_D** | 
 |pd.Series|1-D|
 |df.col|1-D series|
 |df.iloc[:,1]|1-D series|
-|df.iloc[:,[]]/::2]|2-D|
+|df.iloc[:,[]]/::2]|2-D (**both index - lists**)|
 
 ![](.Arithmetic_images/fc3e5ff4.png)![](.Arithmetic_images/b1638664.png)
 ![](.Arithmetic_images/7f0bfac8.png)![](.Arithmetic_images/d0b16e87.png)
@@ -87,4 +91,18 @@ Different from numpy array the column should match as well...so
 ## 2.2 1_D to 2_D/row2col
 ![](.Arithmetic_images/35bb9d05.png)
 
+# 3. Dot product
 
+>If one of the operands is 2_d array, the dimension should be matched.
+Pay attention to dimension of the results
+
+| Operands  |results   | ||
+|---|---|---|---|
+| two 1_D  |scalar   |no need |![](.Arithmetic_images/ffd0e1af.png)|
+|one 1_D   |1_d array   |dimension match   |![](.Arithmetic_images/de9a5f8d.png)|
+|zero 1_D   |2_d array   |dimension match  |see above|
+|matrix|2_d array|dimension match |![](.Arithmetic_images/24f6503b.png)|
+
+>The order the matrix matters since the dimension should match m*n and n*q
+![](.Arithmetic_images/db7f656d.png)
+![](.Arithmetic_images/e3dcbd10.png)

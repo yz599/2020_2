@@ -62,6 +62,8 @@ the gradient** and then performing a parameter update is called Gradient Descent
 ![](.4_5_Gradient_descent_images/0845f601.png)
 [Reference](https://www.ritchieng.com/machine-learning-resources/)
 
+![](.4_5_Gradient_descent_images/4dff73da.png)![](.4_5_Gradient_descent_images/46509fdd.png)
+![](.4_5_Gradient_descent_images/69b3c5fc.png)
 ### 1.2.4 **Explanation of N in the equation**  
 ![picture 8](../../images/1f414a3db11ba47069131ae8b877d90cf5b5f7a26b32868ab3903fe7a57403de.png) 
 ![](.ML_concepts_images/2728518c.png)

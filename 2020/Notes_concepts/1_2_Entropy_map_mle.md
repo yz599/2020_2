@@ -24,7 +24,7 @@
 |---|---|
 |Conditional entropy|![](https://miro.medium.com/max/1400/1*Fkcmkzp1uoML3fujNf2gYA.jpeg)|
 |Information gain |![](https://miro.medium.com/max/1400/1*zc-hk1AKkKOwxvIS9TopZw.jpeg)|
-|KL_distance |<font color='red'>Equation is different from above |
+|KL_distance |<font color='red'>Equation is the same as above |
 
 <font color='red'>Mutual information=Information gain=KL Divergence Under **Decision tree**</font>
 ![](.ML_images/faa582f0.png)
