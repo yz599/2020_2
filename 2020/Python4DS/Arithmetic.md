@@ -41,7 +41,8 @@ the other shape.
 row-wise 
 ### 1.2.1 np.array-row  
 ![](.Arithmetic_images/e085614b.png)![](.Arithmetic_images/2b256bb5.png)
-![](.Arithmetic_images/6edb4c82.png)  **<font color='red'>row-wise</font>**
+![](.Arithmetic_images/6edb4c82.png)  
+**<font color='red'>row-wise</font>**
 ### 1.2.2 df-df.col(series)
 
 - df-row see above
@@ -86,9 +87,13 @@ Different from numpy array the column should match as well...so
 ![](.Arithmetic_images/7f0bfac8.png)![](.Arithmetic_images/d0b16e87.png)
 
 ![](.Arithmetic_images/3eb9c517.png)![](.Arithmetic_images/31bf59ad.png)
+- **Pandas**
+![](.Arithmetic_images/91c8cae9.png)![](.Arithmetic_images/5b3f6a1e.png)
 
-
+- **Numpy:**  
+![](.Arithmetic_images/54f2b9b5.png)![](.Arithmetic_images/1f7372d3.png)
 ## 2.2 1_D to 2_D/row2col
+
 ![](.Arithmetic_images/35bb9d05.png)
 
 # 3. Dot product

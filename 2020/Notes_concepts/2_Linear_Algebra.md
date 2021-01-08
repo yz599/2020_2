@@ -90,6 +90,8 @@ PCA is defined as an **orthogonal linear transformation** that transforms the da
 
 ![picture 34](../../images/8e853b383cbd0a3e0d45567eef0e0cf836768b3f06819c65419c5cccd8505bcc.png)  
 
+![](.2_Linear_Algebra_images/7c57f0fb.png)
+
 #### 1.3.2 PCA:
 
 
