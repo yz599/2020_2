@@ -33,3 +33,4 @@ This reporsitory includes my study notes of machine learning and here gives the 
 # 7. Algorithms - leetcode
 # 8. Important reference
 [Study note](https://www.ritchieng.com/machine-learning-resources/)
+[R1](https://www.byclb.com/TR/Tutorials/neural_networks/)

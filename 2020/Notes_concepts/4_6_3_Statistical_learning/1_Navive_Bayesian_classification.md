@@ -1,6 +1,7 @@
 # Navie Bayesian classification
-
-
+![](.1_Navive_Bayesian_classification_images/45eaed99.png)
+![](.1_Navive_Bayesian_classification_images/3da41dfb.png)  
+![](.1_Navive_Bayesian_classification_images/f0404155.png)
 # 1. [Bayes inference - P(f=x|y=i)-->P(y=i|x)](https://github.com/yz599/2020_2/blob/master/2020/Notes_concepts/1_1_Bayes_inference.md)
 
 ![](.1_Navive_Bayesian_classification_images/aa12d115.png)
@@ -146,3 +147,8 @@ _**The 4th column shows share of the examples and hence the table is actually a 
 2.	Equivalently, P(W | G, H)   Solution: learn joint distribution from data, calculate P(W | G, H)   
 
 e.g., P(W=rich | G = female, H = 40.5)= ![](../.ML_probability_images/8da29a62.png)
+
+# 4. Gaussion Naive Bayesian - [a linear classifier](https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote05.html)
+
+![](.1_Navive_Bayesian_classification_images/9102ae79.png)
+![](.1_Navive_Bayesian_classification_images/08365401.png)

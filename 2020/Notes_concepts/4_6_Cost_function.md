@@ -1,8 +1,13 @@
 # Cost function
-|   | Information_Gain/KL  |Condi entropy | Cross entropy  ||
-|---|---|---|---|---|
-| Decision tree - **generative model P(xy)** |minimize IG/KL= H(Y)-H(yIX)|mini -H(yIX)  |![](https://miro.medium.com/max/1400/1*Fkcmkzp1uoML3fujNf2gYA.jpeg)   |**Evaluate purity of the subset - learn from _features_**|
-| Logistic - **discirmitive model P(yIX)**|![](.ML_images/ad94a2c2.png)   | ---  |![](https://miro.medium.com/max/700/1*J7Q93nEPvsgo0K5fhJMPZQ.png)     |**Derived form sequence of bernulli' trail/higher than P(Y)**  |
+|   | Information_Gain/KL  |  Cross entropy/Condi entropy - share*entropy  ||
+|---|---|---|---|
+| Decision tree - **generative model P(xy)** |minimize IG/KL= H(Y)-H(yIX) |![](https://miro.medium.com/max/1400/1*Fkcmkzp1uoML3fujNf2gYA.jpeg) - datasets -- condi_occurance*entropy |**Evaluate purity of the subset - learn from _features_**|
+| Logistic - **discirmitive model P(yIX)**|![](.ML_images/ad94a2c2.png) |![](https://miro.medium.com/max/700/1*J7Q93nEPvsgo0K5fhJMPZQ.png) - a single case -- true occurance(label)*log(Pred)   |**Derived form sequence of bernulli' trail/higher than P(Y)**  |
+
+
+The cost function of logistic regression and decision tree are talking about the same thing..
+- Decision tree (gener know all date): true condi_occurance (frequency) *entropy = **weighted entropy**
+- Logistic regression (Discrim know one single case): sum of **weighted (1 or 0 true label) entropy** of single case
 
 **Generative classifiers**
 1. Assume some functional form for <font color='red'>P(Y), P(X|Y)</font>
@@ -42,3 +47,5 @@ Joint distribution
 
 ## 2.3 Logistic regression
 ![](.4_6_Cost_function_images/7ec587ed.png)
+
+
