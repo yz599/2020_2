@@ -11,9 +11,11 @@
 | multivariate normal dist |![](.1_3_1_Important_distribution_images/333ee46c.png)  |
 ![](.1_3_1_Important_distribution_images/4f11b06e.png)
 ---
+[common distributions](https://www.itl.nist.gov/div898/handbook/eda/section3/eda366.htm)
 ![picture 5](../../images/2b4abbbdd911bad23af5afb033a7369053596d51284732abb9c477a0b59c8cd3.png)  
 [Possion Dist](https://towardsdatascience.com/poisson-distribution-intuition-and-derivation-1059aeab90d)
 
+[Beta distribution and Dirichlet distribution](https://towardsdatascience.com/beta-distribution-intuition-examples-and-derivation-cf00f4db57af)
 # 2. Multivariate normal distribution
 - Linear combination of standard normal distribution variables..(shift u, scale sigma, **rotate cov(x,y)**)
 - (x-u)/sigma  standarlize x
@@ -68,13 +70,175 @@ https://www.byclb.com/TR/Tutorials/neural_networks/ch4_1.htm
 https://www.byclb.com/TR/Tutorials/neural_networks/
 
 [Reference](https://medium.com/@SeoJaeDuk/archived-post-multivariate-gaussian-distributions-and-entropy-3-991578ca534c)
-## 2.4 [Bivariate correlation](http://www2.cmp.uea.ac.uk/~jrk/distribution/correlations/corr.html)
+## 2.4 [Bivariate correlation](http://www2.cmp.ue'a.ac.uk/~jrk/distribution/correlations/corr.html)
 ![](.1_3_1_Important_distribution_images/4f1991a9.png)
 
 
 
 
-# 3. [Statistic test distributions](https://programming.vip/docs/5ef5604414c57.html)
-## 1.1 [Beta distribution and Dirichlet distribution](https://towardsdatascience.com/beta-distribution-intuition-examples-and-derivation-cf00f4db57af)
-## 1.2 Chi-square distribution
-![picture 11](../../images/adf2cde20eeb27e3eb5dad049e6ce83b1f25b0ab53fb97a79aa579d5dff0994f.png) 
+# 3. [Statistic test distributions - parametric](https://programming.vip/docs/5ef5604414c57.html)
+
+
+[Classical EDA](https://www.itl.nist.gov/div898/handbook/eda/section3/eda3.htm)
+- [Graph](https://www.itl.nist.gov/div898/handbook/eda/section3/eda34.htm)
+- [Quantitative Techniques](https://www.itl.nist.gov/div898/handbook/eda/section3/eda35.htm)
+
+Many of the quantitative techniques fall into two broad categories:
+- Interval estimation
+- Hypothesis tests
+
+![](.1_3_1_Important_distribution_images/ed4b0a0e.png) ![](.1_3_1_Important_distribution_images/92c1a661.png)
+[Ref](https://www.itl.nist.gov/div898/handbook/eda/section3/eda35.htm)
+
+| Sampling Variable of interest:  | test  |
+|---|---|
+| mean   | z/t/F-test  |
+| variance (M-distance)| chi-square  |
+| proportion (mean) | z-test   |
+| goodness of fit 1/proportion  |chi-square1|
+| factor effect (LR correlation)  |chi-square (frequency)/F-test (mean)|
+| median etc    |boostrap|
+
+![](.1_3_1_Important_distribution_images/660c609d.png)
+
+Assumptions:
+- Z/t test (independent, normal or CTL)
+- Chi-square(independent, normal, or CTL)= M-distance = squared z-score <font color='red'>non-parametric analysis </font>
+- F-test (normal, independent, homogeneity of  **residuals** = LR )
+
+>Techniques for comparing **means of normal populations** generally assume the populations have the same variance. 
+ANOVA techniques - test whether this assumption of **homogeneity of variance** is reasonable. 
+
+
+[1. Goodness of fit](https://www.itl.nist.gov/div898/handbook/prc/section2/prc21.htm)
+- Chi-square test for continuous and discrete distributions;
+- Kolmogorov-Smirnov test for continuous distributions based on the empirical distribution function (EDF);
+- Anderson-Darling test for continuous distributions.
+
+## 3.1 [t-test](https://sphweb.bumc.bu.edu/otlt/MPH-Modules/Menu/)
+![](.1_3_1_Important_distribution_images/3f33fa0f.png)
+- [One sample](https://www.kristakingmath.com/blog/test-statistics-for-means-and-proportions)
+  ![](.1_3_1_Important_distribution_images/3379b40b.png)
+
+- Two samples  
+  ![](.1_3_1_Important_distribution_images/5653baef.png)
+  
+- Dependent/paired t-test
+  ![](.1_3_1_Important_distribution_images/ece24c93.png)
+- More than two sample - ANOVA
+
+### [Z-score](https://www.machinelearningplus.com/statistics/mahalanobis-distance/)
+## 3.2 Chi-square distribution
+### Distribution
+![](.1_3_1_Important_distribution_images/39305138.png)  
+
+### Assumption
+- **Parametric:** 
+Test statistics that follow a Chi square distribution occur when the observations are independent and normally distributed, 
+which assumptions are often justified under the central limit theorem. 
+- **non-parametric:**
+There are also chi-square tests for testing the null hypothesis of independence of a pair of random variables based on observations of the pairs.
+---
+### [Mahalanobis distribution (z-score)](https://onlinelibrary.wiley.com/doi/full/10.1002/cem.2680)
+![](.1_3_1_Important_distribution_images/cab6d603.png)
+![](.1_3_1_Important_distribution_images/8611f319.png)
+![](.1_3_1_Important_distribution_images/12dfef3b.png)  
+![](.1_3_1_Important_distribution_images/4bad1060.png)
+![](.1_3_1_Important_distribution_images/b9a281ac.png)  
+![](.1_3_1_Important_distribution_images/32a36631.png)
+> - Multidimension distance doesn't have a sign so squared value is used
+> - M distance is sum of squared z score 
+>- This result can be used to evaluate (subjectively) whether a data point may be an outlier and 
+whether observed data may have a multivariate normal distribution.
+
+![](.1_3_1_Important_distribution_images/fcfda7fb.png)  
+![](.1_3_1_Important_distribution_images/9b25928a.png)
+### 3.2.1 Contingency table
+[ref](https://www.datascienceblog.net/post/statistical_test/contingency_table_tests/)
+![](.1_3_1_Important_distribution_images/84195e60.png)  
+
+
+
+
+## 3.3 F-distribution
+### Distribution
+![](.1_3_1_Important_distribution_images/924efa56.png) 
+
+---
+### Assumption
+In addition to the quantitative ANOVA output, it is recommended that any analysis of variance be complemented with model validation. At a minimum, this should include
+
+- A run sequence plot of the residuals.
+- A normal probability plot of the residuals.
+- A scatter plot of the predicted values against the residuals.
+
+[Univariate measurement process](https://www.itl.nist.gov/div898/handbook/eda/section3/eda355.htm)
+
+### Purpose
+![](.1_3_1_Important_distribution_images/8b389112.png)
+
+The F distribution is the **ratio of two chi-square distributions** with degrees of freedom ν1 and ν2, respectively, 
+where each chi-square has first been divided by its degrees of freedom. 
+### F-test and t-test
+![](.1_3_1_Important_distribution_images/e030d08a.png)
+### 3.3.1 ANOVA  
+The ANOVA is based on the law of total variance, 
+where the observed variance in a particular variable is partitioned into components 
+attributable to different sources of variation. 
+In its simplest form, ANOVA provides a statistical test of whether two or more population means are equal, 
+and therefore generalizes the t-test beyond two means. 
+
+**[Intuition:](https://en.wikipedia.org/wiki/Analysis_of_variance)**  
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Anova%2C_no_fit..png/330px-Anova%2C_no_fit..png)
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/ANOVA_fair_fit.jpg/330px-ANOVA_fair_fit.jpg)
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/ANOVA_very_good_fit.jpg/330px-ANOVA_very_good_fit.jpg)
+
+**Application:**  
+Classical" ANOVA for balanced data does three things at once:
+
+- As exploratory data analysis, an ANOVA employs an additive data decomposition, and its sums of squares indicate the variance of each component of the decomposition (or, equivalently, each set of terms of a linear model).
+- Comparisons of mean squares, along with an F-test ... allow testing of a nested sequence of models.
+- Closely related to the ANOVA is a linear model fit with coefficient estimates and standard errors.[12]
+
+**Assumption:**  
+The normal-model based ANOVA analysis assumes the **independence, normality and homogeneity of variances** of the **residuals**.
+
+**How: Partitioning of the sum of squares**  
+
+the model for a simplified ANOVA with one type of treatment at different levels:
+![](.1_3_1_Important_distribution_images/768d0170.png)
+
+- partitioning of the total sum of squares SS into components related to the effects used in the model. 
+
+- one of these components (that for error) specifies a **chi-squared distribution **which describes the associated sum of squares
+
+**F-test**  
+![](.1_3_1_Important_distribution_images/34ecd229.png)  
+![](.1_3_1_Important_distribution_images/09fc3e33.png)
+![](.1_3_1_Important_distribution_images/5b0bcdcc.png)
+
+### 3.3.2 [Linear regression](http://www.stat.yale.edu/Courses/1997-98/101/anovareg.htm#:~:text=Analysis%20of%20Variance%20(ANOVA)%20consists,(yi%20%2D%20i).)
+
+![](.1_3_1_Important_distribution_images/f8af3799.png)
+
+
+- <font color='red'>SST=SSM+SSE</font>
+- Correlation: <font color='red'>r² = SSM/SST</font>
+ >explaining the fraction of variability in the data explained by the regression model.
+
+- Null hypothesis beta=0;<font color='red'> F=SSM/SSE</font>
+
+> When the MSM term is large relative to
+the MSE term, then the ratio is large and there is evidence against the
+null hypothesis.
+
+![](.1_3_1_Important_distribution_images/92af9f6a.png)
+![](.1_3_1_Important_distribution_images/eaa6c13c.png)
+
+### 3.3.3 Factor effect
+![](.1_3_1_Important_distribution_images/ab856a84.png)
+
+
+# Examples
+# 4. [Nonparametric test](https://sphweb.bumc.bu.edu/otlt/mph-modules/bs/bs704_nonparametric/bs704_nonparametric_print.html)

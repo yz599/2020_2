@@ -116,3 +116,6 @@ Hypothesis tests based on statistical significance are another way of expressing
 
 #### P value
 The p-value is the probability that a given result (or a more significant result) would occur under the null hypothesis
+
+# 2. [Mahalanobis Distance](https://www.machinelearningplus.com/statistics/mahalanobis-distance/)
+## [Outlier](https://towardsdatascience.com/mahalonobis-distance-and-outlier-detection-in-r-cb9c37576d7d)
