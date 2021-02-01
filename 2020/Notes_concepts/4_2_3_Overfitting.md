@@ -9,27 +9,25 @@ For Inductive inference
 
 ><font color='red'>This is usually done by bayes' inference</font>
 
-## 1.2 [Bias and variance ](http://cs229.stanford.edu/summer2020/BiasVarianceAnalysis.pdf)
+## 1.2 [Bias and variance - two ways ](http://cs229.stanford.edu/summer2020/BiasVarianceAnalysis.pdf)
 [Another](https://www.datacamp.com/community/tutorials/tutorial-ridge-lasso-elastic-net)   
 
+The concepts of Bias and Variance are slightly different in the contexts of Statistics
+vs Machine Learning, though the two are closely related in spirit.
 Different from <font color='red'>**SSTO = SSR + SSE**</font> of linear regress
-### 1.2.1 **Estimator(model)** 
-### 1.2.2 **Prodiction** - Over/underfitting 
->**Model trained on data** overfits the data - thus high variation
-
+### 1.2.1 **Estimator(model) - statistical setting** 
+![](.4_2_3_Overfitting_images/797a90f7.png)
 
 **Bias error**: are the simplifying **assumptions made by a model** to make the target function easier to learn
 
-High-Bias: Suggests more assumptions about the form of the target function
->Underfitting(biased)
+>High-Bias: Suggests more assumptions about the form of the target function  
+> ![](.4_2_3_Overfitting_images/72d6637a.png)
 
 **Variance error**: 
 Variance is the amount that the estimate of the target function will change if different training data was used. 
+>High Variance:Suggests large changes to the estimate of the target function with changes to the training dataset.
+> ![](.4_2_3_Overfitting_images/5844091d.png)
 
-**High Variance:** Suggests large changes to the estimate of the target function with changes to the training dataset.
->Overfitting (High variance)
-
-![](.ML_concepts_images/3165f524.png)  
 
 Low-variance machine learning algorithms include:
 - Linear Regression, 
@@ -40,6 +38,15 @@ High-variance machine learning algorithms include:
 - Decision Trees, 
 - k- Nearest Neighbors and 
 - Support Vector Machines
+
+### 1.2.2 Bias-variance decomposition (of a specific ML model)
+![](.ML_concepts_images/3165f524.png) 
+
+ 
+
+
+
+
 
 
 

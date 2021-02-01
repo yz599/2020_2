@@ -1,0 +1,272 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{url}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Attendance Recording System based on Face Detection and Face Recognition}
+
+\author{\IEEEauthorblockN{Shibo Yao}
+\IEEEauthorblockA{\textit{College of Computer Science and Information} \\
+\textit{Drexel University}\\
+Philadelphia, PA\\
+sy565@drexel.edu}
+\and
+
+\IEEEauthorblockN{Yifan Yang}
+\IEEEauthorblockA{\textit{College of Computer Science and Information} \\
+\textit{Drexel University}\\
+Philadelphia, PA \\
+yy532@drexel.edu}
+\and
+\IEEEauthorblockN{Xiangang Lai}
+\IEEEauthorblockA{\textit{College of Engineering} \\
+\textit{Drexel University}\\
+Philadelphia, PA \\
+xl388@drexel.edu}
+}
+
+\maketitle
+
+\begin{abstract}
+Faces, with its universality and uniqueness, has become one of the most widely used and accepted bio-metric method. It has a wide array of applications, including security monitoring, automated surveillance systems, victim and missing-person identification, speech-targeting and so on. The problem this paper tries to attack is auto-attendance taking system, including face picture detection, multiple-face detection, real world face picture Recognition, multiple real world face recognition and taking data to calculate for taking attendance. Deep Convolutional Adversarial Network with be used together with Convolutional Neural Network and Generator Network. The system's performance was evaluated and discussed. 
+\end{abstract}
+
+\begin{IEEEkeywords}
+face detection, face recognition, Convolutional Neural Network, Generator Network
+\end{IEEEkeywords}
+
+
+\section{Background}
+Face detection and recognition are methods of identifying or verifying the identity of individuals using the distinguishable facial features. The faces can be captured in photos, videos or in real-time. This techniques can be employed in a variety ways from allowing people to unlock the iPhones, going through the security  at the airport or other essential buildings, to law enforcement of crimes.
+
+But face recognition data can be prone to mistakes, which means recognizing wrong identities\cite{b1}. The accuracy also depends on the quality of the face images taken. Poor lighting, low resolution and sub-optimal angles will affect the ability of a face detection and recognition system. While researchers continue to work on improving the system's accuracy, another concerns arises from the public. This technique can be easily transplant to general surveillance system which may violate privacy and civil rights \cite{b2}. Although the discussion of legality of such systems is out of the scope here, getting consent of the involved individuals is always the first step.
+
+The application of face detection and recognition to be attacked here is attendance taking, in which the host, professors for instance would like to record the participant without personal intervention. The goal of this project is to create a system that can take attendance automatically based on the faces databases of the attendees stored in the system. 
+
+
+\section{Related Work}
+
+\subsection{Face detection}
+\label{AA}
+Face detection has become a subject that is widely valued and actively researched in the field of pattern recognition and computer vision. However, Faces are a class of natural structural targets with quite complex changes in detail. This technology is difficult for three main reasons:\cite{b3}
+\begin{itemize}
+\item First, although most faces are similarly structured with the same facial features arranged in roughly the same spatial configuration, there can be a large component of non-rigidity and textual differences among faces.
+\item Second, face detection is also made difficult because certain common but significant features, such as glasses or a mustache, can either be present or totally absent from a face.
+\item Third, face detection can be further complicated by unpredictable imaging conditions in an unconstrained environment. 
+\end{itemize}
+
+The most important study was the Eigen-face proposed by Turk et al. Of MIT \cite{b4}. This method is the base for most other algorithms later. There is also a face recognition algorithm based on subspace analysis \cite{b5}. It first uses the principal component analysis method PCA (Principal Components Analysis) \cite{b4} to reduce the face dimensionality, and then uses linear discriminant analysis LDA (Linear-System)\cite{b5}. It is expected to obtain linear subspaces with large inter-class differences and small intra-class differences, but because of this, it cannot model complex nonlinear models. In 2012, Huang et al. Adopted the unsupervised feature learning method of deep learning for the first time \cite{b6}. In the same year,  the Google Brain project initiated by the leading researcher Andrew Ng and others in the machine learning community built a brain-like learning model called "deep neural network" on a distributed parallel computing platform containing 16,000 CPUs \cite{b7}. A breakthrough was made in the field of computer vision progress.
+
+
+\subsection{Convolutional Neural Network }
+In deep learning, a convolutional Neural Network is a class of deep neural networks, most commonly applied to analyzing visual imagery \cite{b8}. Recent year, deep learning method has become more important in  face detection, which CNN preforms significantly. In the context of CNNs, One of state-of-the-art generic object detector, Faster R-CNN \cite{b9}, achieved promising and impressive results. \cite{b10} reports state-of-the-art results on two widely used face detection benchmarks, FDDB and the recently released IJB-A. In addition, much work has been done to improve the Faster R-CNN architecture. \cite{b11} improves the state-of-the-art faster RCNN framework by combining a number of strategies, including feature concatenation, hard negative mining, multi-scale training, model pre-training, and proper calibration of key parameters. 
+
+
+\subsection{Generative adversarial network}
+A generative adversarial network (GAN) is a class of machine learning systems invented by Ian Goodfellow and his colleagues in 2014 \cite{b12}. Two neural networks contest with each other in a game (in the sense of game theory, often but not always in the form of a zero-sum game). Given a training set, this technique learns to generate new data with the same statistics as the training set \cite{b13}. In context of GANs, \cite{b14} propose an alternative generator architecture for generative adversarial networks, borrowing from style transfer literature. The new architecture leads to an automatically learned, unsupervised separation of high-level attributes and stochastic variation in the generated images. CNN is divided into supervised machine learning and unsupervised learning. \cite{b15} builds a class of CNNs called deep convolutional generative adversarial networks (DCGANs), that have certain architectural constraints and also bridge the gap between the success of CNNs for supervised learning and unsupervised learning.
+
+\subsection{Haar Cascade Classifier algorithms}
+  Haar Cascade is a machine learning object detection algorithm used to identify objects in an image or video and based on the concept of  features proposed by Paul Viola and Michael Jones in their paper "Rapid Object Detection using a Boosted Cascade of Simple Features" in 2001.
+It is a machine learning based approach where a cascade function is trained from a lot of positive and negative images. It is then used to detect objects in other images.\cite{b16}
+The algorithm has four stages:
+\begin{itemize}
+\item
+	Haar Feature Selection: 
+\\First step is to collect the Haar Features.  A Haar feature considers adjacent rectangular regions at a specific location in a detection window, sums up the pixel intensities in each region and calculates the difference between these sums.  
+\item
+    Creating  Integral Images
+\item
+    Adaboost Training
+\item
+    Cascading Classifiers
+\end{itemize}
+
+
+    
+
+\section{Approach}
+\subsection{Data}
+We will store pictures of each participant as a database. 
+After recognizing the face of each attendee, compare with the person who should be present in the database
+\subsection{Method}
+\begin{itemize}
+\item Get data by Real-time face detection with opencv\\
+We want to store each user's facial image as database for the following training and face detective. We are using camera to get the facial image and then use Haar Cascade Classifier algorithms in OpenCV to detective facial image.
+
+
+\item TensorFlow\\
+During the preparation period, we need to install TensorFlow which can support CPU.We can go through Anaconda to do the installation.
+
+\item  Training model based on CNN
+\begin{itemize}
+\item Data pre-processing
+\\First, we need to get target's facial image, then re-size it to 64*64. At the mean time, for each type of data according to their user name is assigned a corresponding tag value. In this way, we obtain the data set and the label set. After that, we will based on the following picture to do the  training and testing.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.3]{./figures/p1.png}}
+\label{fig}
+\caption{Flow chart of the approach}
+\end{figure}
+
+\item CNN model
+\\ We use Deep learning library Keras to train our face Model. Keras is a Deep Learning framework based on TensorFlow written in Python. It is a high-level neural network API that supports rapid experiments. It has simple and fast prototyping design, supports CNN and RNN, seamless CPU and GPU switching. \cite{b17}
+\\In our model, we build a linear stacking model, and each neural network layer will be added according to the orders. Here is how we make our CNN network layer.\cite{b18}
+\begin{itemize}
+\item
+2D convolutional layer
+\item
+Relu activation function layer
+\item
+2D convolutional layer
+\item
+Relu activation function layer
+\item
+2 * 2 Pooling layer
+\item
+0.25 Dropout layer
+\item
+2D convolutional layer
+\item
+Relu activation function layer
+\item
+2D convolutional layer
+\item
+Relu activation function layer
+\item
+2 * 2 Pooling layer
+\item
+0.25 Dropout layer
+\item
+Flatten layer
+\item
+Fully connected layer
+\item
+Relu activation function layer
+\item
+0.5 Dropout layer
+\item
+Dense layer
+\item
+Softmax classification layer
+\end{itemize}
+Our parameter is : learning rate= 0.001, batch size = 20, epoch = 8
+
+\end{itemize}
+
+
+
+
+
+\item Face Detective\\
+After obtaining the face model, all we have to do is recognize the faces of multiple people under the camera. We still use OpenCV and Haar Cascade Classifier algorithms to cyclically detect and recognize faces. Reduce the computational complexity by image graying. After importing the model, the face graphics are intercepted and submitted to the model. The model calculates the probability of each label based on the face image, returns the label with a high probability, and returns their user name.
+
+\end{itemize}
+
+
+\section{Evaluation}
+\subsection{Face Detection}
+First, 500 gray scale images are collected of two participants to create the database. Sample photos are given in Figure \ref{fig2} and Figure \ref{fig3}.
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.4]{./figures/face cheng}}
+\caption{Databaze creation - cheng images}
+\label{fig2}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.4]{./figures/face shibo}}
+\caption{Databaze creation - shibo images}
+\label{fig3}
+\end{figure}
+
+However, it's found in the database, there exists some falsely identified picture such as a chin demonstrated in Figure \ref{fig4}. This is because that during the face detection and recognition, the movement of the users' head and poor lightning. A potential solution is to add eye and mouth detector in the future application for better accuracy.
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.6]{./figures/Wrong detection chin}}
+\caption{Wrong detection of face example - chin}
+\label{fig4}
+\end{figure}
+
+\subsection{Face Model}
+The face model was created as decribed as the previous section. The performance in terms of loss and accuracy are plotted in Figure \ref{fig5} and Figure \ref{fig6} as first and last epoch. It can be seen the loss and accuracy are decreasing and increasing respectively at each iteration. 
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.6]{./figures/loss and accuracy for first epoch}}
+\caption{Loss and accuracy of the model for first epoch}
+\label{fig5}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.6]{./figures/loss and accuracy for last epoch}}
+\caption{Loss and accuracy of the model for last epoch}
+\label{fig6}
+\end{figure}
+
+The losses against iteration are also plotted for both traiining and validation dataset, as Figure \ref{fig7}. It can be seen the gradual loss for both data set as each batch, which proves the model is getting more and more accurate. On the other hand, the accuracy, as shown in Figure \ref{fig8}, increases as the batch number for training dataset but keep stable at a high level for the validation data set. The amount of available validation data set might be the causes. 
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.35]{./figures/training and validation loss}}
+\caption{training and validation loss}
+\label{fig7}
+\end{figure}
+
+
+\begin{figure}[h]
+\centerline{\includegraphics[scale=0.35]{./figures/training and validation accuracy}}
+\caption{training and validation accuracy}
+\label{fig8}
+\end{figure}
+
+\subsection{Face Recognition}
+Upon the creation of the face model, we tested the face images of the users who already existed in the database. The label (user name) was given by comparing the probability of each class. Figure \ref{fig9} shows the interface of our system. It can be seen the two users are detected and identified successfully. 
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.2]{./figures/interface}}
+\caption{Face recognition interface}
+\label{fig9}
+\end{figure}
+
+
+\section{Conclusions}
+A face detection and recognition system was built for attendance taking, by taking advantage of OpenCV, Tensorflow, Convolutional Neural Network, Generative Adversarial Network, etc.  Results shows the system was able to capture and recorded the user names as designed. 
+
+\section{Future work}
+We used our own photos for the creation of the database and the system evaluation. The next step would be increase diversity of the database. 
+
+
+\begin{thebibliography}{00}
+\bibitem{b1} Reilly, C. 2018. “Facial-Recognition Software Inaccurate in 98\% of Cases, Report Finds.” Cnet.com, May 13. https://www.cnet.com/news/facial-recognition-software-inaccurate-in-98-of-metropolitan-police-cases-reports/
+\bibitem{b2} Ben Williamson, Sian Bayne, Suellen Shay. (2020) The datafication of teaching in Higher Education: critical issues and perspectives. Teaching in Higher Education 25:4, pages 351-365
+\bibitem{b3} Sung K. and Poggio T. Example-based learning for view based human face detection. IEEE Trans. on Pattern Analysis and Machine Intelligence, 1998, 20(1): 39-51 .
+\bibitem{b4} Turk M, Pentland A. Engenfaces for recognition[J]. Journal of cognitive neuroscience, 1991,3(1): 71-86.
+\bibitem{b5} Belhumeur P N, Hespanha J P, Kriegman D J.  Eigenfaces vs. Fisherfaces: RecognitionUsing Class Specific Linear Projection, 1997,19(7):711-720.
+\bibitem{b6} G. B. Huang, H. Lee, and E. Learned-Miller. Learning hierarchical representations for face verification with convolutional deep belief networks. InCVPR, 2012.
+\bibitem{b7} Markoff J. How many computers to identity a cat? 16 000 [N]. New York Times, 2012-06-25.
+\bibitem{b8}\url{https://en.wikipedia.org/wiki/Convolutional_neural_network}
+\bibitem{b9} S. Ren, K. He, R. B. Girshick, and J. Sun. Faster R-CNN:towards real-time object detection with region proposal net-works. InNIPS, pages 91–99, 2015.
+\bibitem{b10} H. Jiang and E. G. Learned-Miller, “Face detection with the faster R-CNN,”arXiv preprint arXiv:1606.03473, 2016.
+\bibitem{b11} X. Sun, P. Wu, and S. C. Hoi, “Face detection using deep learning: Animproved faster rcnn approach,”arXiv:1701.08289, 2017.
+\bibitem{b12} Goodfellow, Ian; Pouget-Abadie, Jean; Mirza, Mehdi; Xu, Bing; Warde-Farley, David; Ozair, Sherjil; Courville, Aaron; Bengio, Yoshua (2014). Generative Adversarial Networks (PDF). Proceedings of the International Conference on Neural Information Processing Systems (NIPS 2014). pp. 2672–2680.
+\bibitem{b13} \url{https://en.wikipedia.org/wiki/Generative_adversarial_network}
+\bibitem{b14} Karras, T., Laine, S., and Aila, T. A style-based genera-tor architecture for generative adversarial networks. InCVPR, 2019.
+\bibitem{b15} Alec Radford, Luke Metz, and Soumith Chintala. Unsupervised representa-tion learning with deep convolutional generative adversarial networks.CoRR,abs/1511.06434, 2015.
+\bibitem{b16} \url{http://www.willberger.org/cascade-haar-explained/}
+\bibitem{b17} \url{https://keras-cn.readthedocs.io/en/latest/#30skeras}
+\bibitem{b18} \url{https://blog.csdn.net/qq_42633819/article/details/81191308}
+
+
+\end{thebibliography}
+
+
+\end{document}

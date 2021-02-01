@@ -1,0 +1,161 @@
+\title{CS 615 - Deep Learning}
+\author{
+        Assignment 1 - Artificial Neurons\\
+		Spring 2020\\
+		
+		
+		\\
+		Xiangang Lai
+}
+\date{}
+\documentclass[12pt]{article}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+
+\includecomment{versionB}
+%\excludecomment{versionB}
+
+\begin{document}
+\maketitle
+
+
+
+\newpage
+\section{Theory}
+\begin{enumerate}
+\item Given a class probability distribution of $\{0.1,0.8, 0.1\}$, what is the cross entropy if the correct class is the first class?  (3pts)
+$$ J = -ln(ya)=-ln(0.1)=2.3026$$
+\item If we're using cross-entropy as our objective function, are we attempting to minimize it or maximize it (2pts)?\\
+Minimize, to reduce the randomness.
+\item Given the confusion table in Figure \ref{confusion}:
+\begin{figure}[H]
+\begin{center}
+\includegraphics{fig1.jpg}
+\caption{Confusion Matrix}
+\label{confusion}
+\end{center}
+\end{figure}
+\begin{itemize}
+\item What are the class priors? (3pts)\\
+The prior was calculated based on the number of true classes over the total numbers. get:\\
+    0.1045    0.1000    0.3773    0.4182
+
+\item What is the overall accuracy of the system? (2pts)\\
+The accuracy equal the sum of diagonal entries over the total number. Gives: \\
+0.6455
+\end{itemize}
+\end{enumerate}
+
+\newpage
+\section{Gradient Descent}
+  
+\begin{figure}[H]
+\begin{center}
+\includegraphics{Q2.jpg}
+\caption{Gradient Descent Progress}
+\end{center}
+\end{figure}
+
+\newpage
+\section{Gradient Descent Logistic Regression}\label{linreg}
+
+\begin{enumerate}
+\item The values of the hyperparameters that you chose.\\
+\begin{itemize}
+\item theta was initialized as a rand matrix with dimension 1601x14, with seed rng(1)
+\item learning rate: 0.1
+\item L2 regularization ratio: 0.01
+\item termination criterion:  reach 1000 iterations, or change in objective function J or norm of change of theta smaller than 1e-6, which one arrives earlier   
+\end{itemize}
+
+\item A graph of the average log likelihood for the training and testing sets as a function of the training iteration number.
+\begin{figure}[H]
+\begin{center}
+\includegraphics{Q3.jpg}
+\caption{Gradient Descent Logistic Regression Progress}
+\end{center}
+\end{figure}
+
+\item The testing accuracy.\\
+0.9286  
+\item The confusion matrix for the testing data.\\
+\begin{table}[H]
+\begin{tabular}{@{}llclllllllllllll@{}}
+\multicolumn{1}{c}{}                                       &                            & \multicolumn{14}{c}{\cellcolor[HTML]{38FFF8}True Class}                                                                                                                                                                                                                                                                                                                                                     \\
+\multicolumn{1}{c}{}                                       &                            & \cellcolor[HTML]{38FFF8}2 & \cellcolor[HTML]{38FFF8}3 & \cellcolor[HTML]{38FFF8}4 & \cellcolor[HTML]{38FFF8}5 & \cellcolor[HTML]{38FFF8}6 & \cellcolor[HTML]{38FFF8}7 & \cellcolor[HTML]{38FFF8}8 & \cellcolor[HTML]{38FFF8}9 & \cellcolor[HTML]{38FFF8}10 & \cellcolor[HTML]{38FFF8}11 & \cellcolor[HTML]{38FFF8}12 & \cellcolor[HTML]{38FFF8}13 & \cellcolor[HTML]{38FFF8}14 & \cellcolor[HTML]{38FFF8}15 \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}2  & 4                         & 0                         & 0                         & 1                         & 0                         & 0                         & 0                         & 0                         & 0                          & 0                          & 0                          & 0                          & 1                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}3  & 0                         & 3                         & 0                         & 0                         & 1                         & 1                         & 0                         & 0                         & 0                          & 0                          & 0                          & 0                          & 1                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}4  & 1                         & 0                         & 4                         & 1                         & 0                         & 0                         & 0                         & 0                         & 0                          & 0                          & 0                          & 0                          & 0                          & 1                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}5  & 0                         & 0                         & 1                         & 4                         & 1                         & 0                         & 0                         & 0                         & 0                          & 0                          & 0                          & 0                          & 1                          & 1                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}6  & 0                         & 0                         & 0                         & 0                         & 4                         & 0                         & 0                         & 0                         & 0                          & 0                          & 0                          & 0                          & 2                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}7  & 0                         & 0                         & 1                         & 0                         & 0                         & 4                         & 0                         & 0                         & 0                          & 0                          & 0                          & 0                          & 0                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}8  & 0                         & 1                         & 0                         & 0                         & 0                         & 0                         & 2                         & 1                         & 1                          & 1                          & 0                          & 0                          & 1                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}9  & 1                         & 0                         & 0                         & 1                         & 0                         & 0                         & 0                         & 4                         & 0                          & 0                          & 0                          & 0                          & 1                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}10 & 0                         & 0                         & 1                         & 0                         & 0                         & 0                         & 1                         & 0                         & 4                          & 0                          & 0                          & 0                          & 0                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}11 & 0                         & 0                         & 1                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                          & 4                          & 1                          & 0                          & 1                          & 1                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}12 & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                          & 0                          & 4                          & 0                          & 1                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}13 & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 1                         & 0                         & 0                          & 0                          & 0                          & 4                          & 1                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}14 & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                          & 0                          & 0                          & 0                          & 4                          & 0                          \\
+\multirow{-14}{*}{\cellcolor[HTML]{34FF34}Predicted class} & \cellcolor[HTML]{34FF34}15 & 0                         & 0                         & 0                         & 0                         & 0                         & 1                         & 0                         & 0                         & 0                          & 0                          & 0                          & 0                          & 0                          & 3                          \\ \cmidrule(l){2-16} 
+\end{tabular}
+\end{table}
+
+\end{enumerate}
+
+\newpage
+
+\section{Gradient Descent w/ Softmax and Cross-Entropy}
+\begin{enumerate}
+\item The values of the hyperparameters that you chose.
+\begin{itemize}
+\item theta was initialized as a zero matrix with dimension 1601x14
+\item Learning rate: 0.08
+\item L2 regularization ratio: 0.85
+\item Termination criterion:  reach 1000 iterations, or change in objective function J or maximum column norm of change of theta smaller than 1e-6, which one arrives earlier
+\end{itemize}
+   
+\item A graph of the average cross-entropy loss the training and testing sets as a function of the training iteration number.
+\begin{figure}[H]
+\begin{center}
+\includegraphics{Q4.jpg}
+\caption{Gradient Descent Logistic Regression Progress}
+\end{center}
+\end{figure}
+\newpage
+\item The testing accuracy.\\
+
+0.9286  
+\item The confusion matrix for the testing data.
+
+
+\begin{table}[H]
+\begin{tabular}{@{}llllllllllllllll@{}}
+                                                           &                            & \multicolumn{14}{l}{\cellcolor[HTML]{38FFF8}True Class}                                                                                                                                                                                                                                                                                                                                                     \\
+                                                           &                            & \cellcolor[HTML]{38FFF8}2 & \cellcolor[HTML]{38FFF8}3 & \cellcolor[HTML]{38FFF8}4 & \cellcolor[HTML]{38FFF8}5 & \cellcolor[HTML]{38FFF8}6 & \cellcolor[HTML]{38FFF8}7 & \cellcolor[HTML]{38FFF8}8 & \cellcolor[HTML]{38FFF8}9 & \cellcolor[HTML]{38FFF8}10 & \cellcolor[HTML]{38FFF8}11 & \cellcolor[HTML]{38FFF8}12 & \cellcolor[HTML]{38FFF8}13 & \cellcolor[HTML]{38FFF8}14 & \cellcolor[HTML]{38FFF8}15 \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}2  & 3                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                          & 0                          & 0                          & 0                          & 0                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}3  & 0                         & 3                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                          & 0                          & 0                          & 0                          & 0                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}4  & 0                         & 0                         & 4                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                          & 0                          & 0                          & 0                          & 0                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}5  & 1                         & 0                         & 0                         & 4                         & 0                         & 0                         & 0                         & 0                         & 0                          & 0                          & 0                          & 0                          & 0                          & 1                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}6  & 0                         & 0                         & 0                         & 0                         & 4                         & 0                         & 0                         & 0                         & 0                          & 0                          & 0                          & 0                          & 0                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}7  & 0                         & 0                         & 0                         & 0                         & 0                         & 4                         & 1                         & 0                         & 1                          & 0                          & 0                          & 1                          & 0                          & 1                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}8  & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 2                         & 0                         & 0                          & 0                          & 0                          & 0                          & 0                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}9  & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 4                         & 0                          & 0                          & 0                          & 0                          & 0                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}10 & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 3                          & 0                          & 0                          & 0                          & 0                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}11 & 0                         & 1                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                          & 4                          & 0                          & 0                          & 0                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}12 & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                          & 0                          & 4                          & 0                          & 0                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}13 & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 1                         & 0                         & 0                          & 0                          & 0                          & 3                          & 0                          & 0                          \\
+\cellcolor[HTML]{34FF34}                                   & \cellcolor[HTML]{34FF34}14 & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                          & 0                          & 0                          & 0                          & 4                          & 0                          \\
+\multirow{-14}{*}{\cellcolor[HTML]{34FF34}Predicted class} & \cellcolor[HTML]{34FF34}15 & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                          & 0                          & 0                          & 0                          & 0                          & 2                          \\ \cmidrule(l){2-16} 
+\end{tabular}
+\end{table}
+
+\end{enumerate}
+
+\end{document}
+

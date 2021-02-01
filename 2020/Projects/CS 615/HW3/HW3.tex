@@ -1,0 +1,256 @@
+\title{CS 615 - Deep Learning}
+\author{
+        Assignment 3 - Convolutional Neural Networks\\
+        Spring 2020\\
+        Xiangang Lai
+}
+\date{}
+\documentclass[12pt]{article}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\begin{document}
+\maketitle
+
+\section{Theory}
+\begin{enumerate}
+\item (2pts) Apply kernel $K$ to data $X$.  In other words, what is $X*K$?:\\
+$$X=\begin{bmatrix}
+1&2&3\\
+4&5&6\\
+7 & 8 & 9
+\end{bmatrix}
+K=\begin{bmatrix}
+1&2&3\\
+4&5&6\\
+7 & 8 & 9
+\end{bmatrix}
+$$
+Its only valid value at the center: 165
+
+\item Given the feature map filter output, $F=\begin{bmatrix}
+1&2&3&4&1&3\\
+4&5&6&0&0&12\\
+7 & 8 & 9 & 1 & 0 & 4\\
+-100 & -100 & -100 & -100 & -100 & -100
+\end{bmatrix}$, what is the output from a pooling layer with width of 2 and stride of 2 if we are using:
+	\begin{itemize}
+		\item (3pts) Max-Pooling?\\
+		$P=\begin{bmatrix}
+           5&6&12\\
+		8&9&4\
+		\end{bmatrix}$
+		\item (3pts) Mean-Pooling?\\
+		$P=\begin{bmatrix}
+           3&\frac{13}{4}&4\\
+		-\frac{185}{4}&-\frac{95}{2}&-49\
+		\end{bmatrix}$
+	\end{itemize}
+\item (2pts) Given an image $X$, what would the kernel $K$ be that can reproduce the image when convoluted with it?  That is, what is $K$ such that $X*K=X$?\\
+K should be the identity matrix with dimension 1
+\end{enumerate}
+
+\newpage
+\section{CNN for LSE Classification}\label{LSE}
+
+\paragraph{What you will need for your report}
+\begin{enumerate}
+\item Your hyperparameter choices.
+\begin{itemize}
+\item[]K is generated randomly with integers from -10 to 10, by seed 2278965
+\item[]learning rate: 0.0027
+\item[]L2 regularization rate: 0.01
+\end{itemize}
+
+\item Image representations of your initial and final kernels.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Q2_K1}
+\caption{Initial K}
+\end{figure} 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Q2_K2}
+\caption{Final K}
+\end{figure} 
+
+\item A plot of the RMSE as a function of the number of iterations.
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Q2}
+\caption{Square error over number of iterations}
+\end{figure} 
+
+
+\end{enumerate}
+
+\newpage
+\section{CNN for MLE Classification}
+\begin{enumerate}
+\item Your hyperparameter choices.
+\begin{itemize}
+\item[]K is generated randomly with integers from -10 to 10, by seed 28
+\item[]learning rate: 0.0006
+\item[]L2 regularization rate: 0.001
+\end{itemize}
+
+\item Image representations of your initial and final kernels.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Q3_K1}
+\caption{Initial K}
+\end{figure} 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Q3_K2}
+\caption{Final K}
+\end{figure} 
+
+\item A plot of the RMSE as a function of the number of iterations.
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Q3}
+\caption{Log likelihood over number of iterations}
+\end{figure} 
+
+
+\end{enumerate}
+
+\newpage
+\section{CNN for LCE Classification}\label{LCE}
+\begin{enumerate}
+\item Your hyperparameter choices.
+\begin{itemize}
+\item[]K is generated randomly with integers from -10 to 10, by seed 1153
+\item[]learning rate: 0.01
+\item[]L2 regularization rate: 0.0001
+\end{itemize}
+
+\item Image representations of your initial and final kernels.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Q4_K1}
+\caption{Initial K}
+\end{figure} 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Q4_K2}
+\caption{Final K}
+\end{figure} 
+
+\item A plot of the RMSE as a function of the number of iterations.
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Q4}
+\caption{Cross entropy loss over number of iterations}
+\end{figure} 
+
+
+\end{enumerate}
+
+\newpage
+\section{CNN With Multiple Kernels}\label{MF}
+\begin{enumerate}
+\item Your hyperparameter choices.
+\begin{itemize}
+\item[]K is generated randomly with integers from -10 to 10, by seed 32
+\item[]learning rate: 0.01
+\item[]L2 regularization rate: 0
+\end{itemize}
+
+\item Image representations of your initial and final kernels.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Q5_K1}
+\caption{Initial K}
+\end{figure} 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Q5_K2}
+\caption{Final K}
+\end{figure} 
+
+\item A plot of the RMSE as a function of the number of iterations.
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Q5}
+\caption{Square error over number of iterations}
+\end{figure} 
+
+
+\end{enumerate}
+\newpage
+\section{Multi-Kernel CNN For Image Classification}
+\paragraph{Architecture 1}
+\begin{enumerate}
+\item The architecture.
+\begin{itemize}
+\item[]Activation function: linear
+\item[]Objective function: square error
+\item[]stride: 2
+\item[]Width of kernels: 5
+\item[]number of kernels: 4
+\end{itemize}
+
+\item The values of any additional hyperparameters that you chose (outside of the architecture decisions).
+\begin{itemize}
+\item[]K is generated randomly with integers from -10 to 10, by seed 32
+\item[]learning rate: 0.00007
+\item[]L2 regularization rate: 0.001
+\end{itemize}
+
+\item Plot of iteration vs objective function evaluation.
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Q61}
+\caption{Square error over number of iterations}
+\end{figure} 
+\item Final training and testing accuracies.\\
+train accuracy: 1\\
+trst accuracy: 0.93
+
+\end{enumerate}
+
+
+\paragraph{Architecture 2}
+\begin{enumerate}
+\item The architecture.
+\begin{itemize}
+\item[]Activation function: logistic
+\item[]Objective function: log likelihood
+\item[]stride: 2
+\item[]Width of kernels: 19
+\item[]number of kernels: 9
+\end{itemize}
+
+\item The values of any additional hyperparameters that you chose (outside of the architecture decisions).
+\begin{itemize}
+\item[]K is generated randomly with integers from -10 to 10, by seed 354
+\item[]learning rate: 3e-7
+\item[]L2 regularization rate: 0.5
+\end{itemize}
+
+\item Plot of iteration vs objective function evaluation.
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Q62}
+\caption{Square error over number of iterations}
+\end{figure} 
+\item Final training and testing accuracies.\\
+train accuracy: 0.08\\
+trst accuracy: 0.07
+\end{enumerate}
+
+\end{document}
+

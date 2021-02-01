@@ -1,0 +1,126 @@
+\title{CS 615 - Deep Learning}
+\author{
+        Assignment 2 - Artificial Neural Networks\\
+        Spring 2020\\
+        Xiangang Lai
+}
+\date{}
+\documentclass[12pt]{article}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\begin{document}
+\maketitle
+
+
+
+
+
+
+\section{Theory}
+\begin{enumerate}
+\item Another common activation function is the hyperbolic tangent function, \emph{tanh}, which is defined as:
+\begin{equation}
+tanh(z) = \frac{e^z-e^{-z}}{e^z+e^{-z}}
+\end{equation}
+What is $\frac{\partial tanh(x\theta)}{\partial \theta_j}$ (5pts)?\\
+
+\begin{align*}
+\frac{\partial tanh(x\theta)}{\partial \theta_j} &= \frac{\partial tanh(z)}{\partial z}\frac{\partial z}{\partial \theta_j} \\ &= \frac{(e^z-e^{-z})*(e^z+e^{-z})-(e^z-e^{-z})^2}{(e^z+e^{-z})^2}x_j \\&= \frac{(e^{2z}-e^{-2z})-(e^{2z}+e^{-2z}-2)}{(e^z+e^{-z})^2}x_j \\&= \frac{2-e^{-2z}}{(e^z+e^{-z})^2}x_j \\&= \frac{2-e^{-2x\theta}}{(e^{x\theta}+e^{-x\theta})^2}x_j
+\end{align*}
+
+\item Given a network with a single hidden layer, a softmax activation function at the output, a linear activation at the hidden layer, and a cross-entropy objective function what is:
+\begin{enumerate}
+\item $\frac{\partial J}{\partial \theta_{kj}}$ (5pts)\\
+Given
+
+\[J =  - \sum\nolimits_{i = 1}^K {{y_i}} \ln \left( {{{\hat y}_i}} \right) = \ln \left( {{{\hat y}_a}} \right)\]
+
+\[\frac{{\partial J}}{{\partial g\left( {net_{{O_k}}} \right)}} = -\frac{1}{{{{\hat y}_a}}}\]
+
+\[\frac{\partial g\left(net_{O_k}\right)}{\partial net_{O_k}} =\begin{array}{l}
+ = \left\{ {\begin{array}{*{20}{c}}
+{\frac{{{e^{h{\theta _{:,a}}}}\left( {\sum\nolimits_{k = 1}^K {{e^{h{\theta _{:,i}}}}} } \right) - {e^{2h{\theta _{:,a}}}}}}{{{{\left( {\sum\nolimits_{k = 1}^K {{e^{h{\theta _{:,a}}}}} } \right)}^2}}} = {{\hat y}_a}\left( {1 - {{\hat y}_a}} \right)}&{k = a}\\
+{\frac{{ - {e^{h{\theta _{:,k}}}}{e^{h{\theta _{:,a}}}}}}{{{{\left( {\sum\nolimits_{k = 1}^K {{e^{h{\theta _{:,a}}}}} } \right)}^2}}} = {{\hat y}_a}{{\hat y}_k}}&{k \ne a}
+\end{array}} \right.\\
+ = {{\hat y}_a}\left( {{y_k} - {{\hat y}_k}} \right)
+\end{array}\]
+\[\frac{\partial net_{O_k}}{\partial \theta_{kj}} = h_j\]
+Therefore
+\begin{align*}
+\frac{\partial J}{\partial \theta_{kj}} 
+=  \frac{\partial J}{\partial {{\hat y}_a}}\frac{\partial {{\hat y}_a}} {\partial net_{O_k}}\frac{\partial net_{O_k}}{\partial \theta_{kj}} 
+= -(y_k-{{\hat y}_k})h_j
+\end{align*}
+\item $\frac{\partial J}{\partial \beta_{ij}}$ (5pts)\\
+\begin{align*}
+\frac{\partial J}{\partial \beta_{ij}} &=  - \sum\nolimits_{i = 1}^K{ \left(\frac{\partial J}{\partial {{\hat y}_a}}\frac{\partial {{\hat y}_a}} {\partial net_{O_k}}\frac{\partial net_{O_k}}{\partial g\left( {net_{{h_j}}} \right)} \frac{\partial g\left( {net_{{h_j}}} \right)}{\partial {net_{{h_j}}}}\frac{\partial {net_{{h_j}}}}{\partial \beta_{ij}}\right)}
+ \\&= - \sum\nolimits_{i = 1}^K{ -(y_k-{{\hat y}_k})\theta_{jk}*1*x_i} 
+ \\& = -x_i \sum\nolimits_{i = 1}^K{(y_k-{{\hat y}_k})\theta_{jk}}
+\end{align*}
+\end{enumerate}
+\end{enumerate}
+
+\newpage
+\section{Shallow Artificial Neural Networks}
+
+\paragraph{Hyperparameters}
+You'll also have to experiment with different hyper-parameters.  These include:
+\begin{enumerate}
+\item How to initialize your model (i.e the initial values of $\theta$.\\
+Generate rand numbers with seed 61
+\item Your learning rate.\\
+0.75
+\item Your regularization amount (use L2 regularization).\\
+The coefficient is 0.008
+\end{enumerate}
+
+
+\paragraph{Results}
+\begin{enumerate}
+\item A graph of the average log likelihood for the training and testing sets as a function of the training iteration number.
+\begin{figure}[H]
+\begin{center}
+\includegraphics{hw2-1.png}
+\caption{Gradient Descent Progress}
+\end{center}
+\end{figure}
+\item The testing accuracy.\\
+0.95 for test dataset and 1 for train dataset
+\item The confusion matrix for the testing data.
+\begin{figure}[H]
+\begin{center}
+\includegraphics{hw2-2.png}
+\caption{Confusion Matrix of test dataset}
+\end{center}
+\end{figure}
+\end{enumerate}
+
+
+\newpage
+\section{Multi-Layer ANN}
+
+\begin{enumerate}
+\item The values of the hyperparameters that you chose.\\
+Learning rate: 0.75\\L2 Regulariation Coefficient: 0.0002\\Random seed: 120
+\item A table of network configurations and their associated number of iterations till termination, training and testing accuracies.\\
+\begin{table}[H]
+\begin{tabular}{lccc}
+Hidden Layer Vector & Number of Iterations & Train Accuracy    & Test Accuracy     \\
+{[}500,20,15{]}     & 255                 & 0.591836734693878 & 0.500000000000000 \\
+{[}800,50{]}        & 1055                & 1                 & 0.892857142857143 \\
+{[}600,50{]}        & 1042                & 1                 & 0.928571428571429 \\
+{[}50,10{]}         & 623                 & 0.948979591836735 & 0.821428571428571 \\
+{[}50,30,10{]}      & 224                 & 0.602040816326531 & 0.553571428571429 \\
+{[}500,20,15{]}     & 81                  & 0.306122448979592 & 0.303571428571429
+\end{tabular}
+\end{table}
+
+\end{enumerate}
+Two hidden layers typically generate good results while having three layers, the selection of the hyperparameters are more tricky
+
+\end{document}
+

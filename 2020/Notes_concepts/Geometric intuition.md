@@ -36,6 +36,7 @@ This notes discussed the NN from three different perspectives
 ## 2.1 Prior probability and the line
 ![](.Neural_net_work_images/5214ece0.png)![](.Neural_net_work_images/70a922a4.png)
 
+
 # 3. Neural network
 ## 3.1 [Linearity assumption:](http://d2l.ai/chapter_multilayer-perceptrons/mlp.html)
 
@@ -104,4 +105,8 @@ to higher dimension as the results of Relu(Wx+b) **which is separable**
 the neurual network (something similar to Tyler Series)
 
 
-![](.Geometric intuition_images/2509e883.png)
+![](.Geometric intuition_images/2509e883.png)  
+
+
+# 4. SVM
+![](.Neural_net_work_images/8c45874f.png)
