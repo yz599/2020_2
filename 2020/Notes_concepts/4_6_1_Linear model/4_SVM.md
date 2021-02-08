@@ -6,8 +6,17 @@
 ![](.4_SVM_images/bcf9ea29.png)![](.4_SVM_images/7d879d27.png)
 ![](.4_SVM_images/5f2781e0.png)![](.4_SVM_images/33a551e9.png)   
 
+# Geometric interpretation
+Geometrically, finding the HMC for two separable classes amounts to the following:
 
+- Draw the convex hull40 around each class (these are the polygons surrounding each class in Figure 14.3).
 
+- Draw the shortest line segment that connects the two convex hulls (this is the dotted line segment in Figure 14.3).
+
+- The perpendicular bisector of this line segment is the HMC!
+
+- The margin boundaries are formed by drawing lines that pass through the support vectors and are parallel to the separating hyperplane (these are the dashed line segments in Figure 14.3).
+![](.4_SVM_images/a8e3aa99.png)
 # 2. [Derivation](https://www.cs.princeton.edu/courses/archive/spring16/cos495/slides/AndrewNg_SVM_note.pdf)
 ![](.4_SVM_images/f78db351.png)
 

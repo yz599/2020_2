@@ -42,7 +42,7 @@
 # 3. Mahalanobis distance   
 ![](.1_3_1_Important_distribution_images/9d91e2f1.png) 
    
-it provides a way to measure distances that takes into account the scale of the data.
+it provides a way to measure distances that takes into account the scale/variance of the data.
 
 ## 3.1 [Distance measure by probability (standard deviation)](https://blogs.sas.com/content/iml/2012/02/15/what-is-mahalanobis-distance.html)
 - In statistics, we sometimes measure "nearness" or "farness" in 
