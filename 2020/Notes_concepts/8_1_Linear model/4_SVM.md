@@ -1,4 +1,4 @@
-SVM 
+SVPErM 
 - find margin
 - Optimization problem
 
