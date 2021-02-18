@@ -1,6 +1,6 @@
 # Cost function
 
-![](.4_6_Cost_function_images/82082d94.png)
+![](.4_6_Cost_function_images/9371e04f.png)
 ![](.4_6_Cost_function_images/a05e81fe.png)
 
 Some additional notes on loss functions:

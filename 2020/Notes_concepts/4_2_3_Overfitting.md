@@ -63,14 +63,14 @@ Neural network
 ![](.4_2_3_Overfitting_images/2cb09444.png)
 
 Demonstrated by a two dim cases,[x1,x2],  
-![picture 23](../../images/fe760d8787fa3530799a10a9274d9ac31c708199302f3f7ceb2cb771beb218cf.png)  
+![picture 24](../../images/fe760d8787fa3530799a10a9274d9ac31c708199302f3f7ceb2cb771beb218cf.png) 
 ![picture 24](../../images/e70e24de974a697bd03f2d53371e41417f2404e06f02f4d2d3009255c5078042.png)  
 
 ### 2.2.2 [Geometric intuition of regularization](https://explained.ai/regularization/index.html)
-![](.4_2_3_Overfitting_images/9fa83732.png)
+![](.4_2_3_Overfitting_images/1be7ccc3.png)
 #### Why is L1 more likely to zero coefficients than L2?
 ![](.4_2_3_Overfitting_images/ab17c459.png)
-
+![](.4_2_3_Overfitting_images/9fa83732.png)
 ### PCA and L1 regularization
 [Other regularization](https://en.wikipedia.org/wiki/Regularization_(mathematics)#Classification)
 ![picture 3](../../images/fb23b13f94a92b1dbf58cf9c0493063ef4daccd92903c0339331e87f5f013ff4.png)  

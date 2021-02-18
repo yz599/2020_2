@@ -22,13 +22,7 @@
 ![](.1_3_1_Important_distribution_images/bcf11363.png)  
 
 # 2. PCA - project feature to eigenvector
-## 2.1 Projection to new base 
-![](.4_7_Covariance_matrix_images/6f116fbd.png)
-![](.4_7_Covariance_matrix_images/36a718bf.png)
-![](.4_7_Covariance_matrix_images/9b76050f.png)
-![](.4_7_Covariance_matrix_images/76ec6abb.png)
-![](.4_7_Covariance_matrix_images/d78cbe37.png)
-## 2.2 New base is eigenvector of covariance matrix
+## 2.1 New base is eigenvector of covariance matrix
 ![](.4_7_Covariance_matrix_images/bf819f02.png)
 ![](.4_7_Covariance_matrix_images/d6fb6d53.png)
 
@@ -51,7 +45,7 @@ terms of the scale of the data. Often "scale" means **"standard deviation.**
 this choice of scale also makes a statement about **probability**.
 - z-score of x is the quantity z = (x-miu)/sigma - the number of standard deviations that x is from the mean.
 
-
+ 
 ![](.4_7_Covariance_matrix_images/b2dba2c4.png)
 - bivariate normal data that is overlaid with prediction ellipses.
 - The ellipses in the graph are the 10% (innermost), 20%, ..., and 90% (outermost) 
@@ -101,7 +95,7 @@ prediction ellipses for the **bivariate normal distribution that generated the d
 ### 4.1.2 Scaling and rotation  
 ![](.4_7_Covariance_matrix_images/85ad30dd.png)
 ![](.1_3_1_Important_distribution_images/4f1991a9.png) 
-### 4.1.3 Decorrelate variables and compute z-score
+### 4.1.3 [D]ecorrelate variables and compute z-score](https://en.wikipedia.org/wiki/Whitening_transformation)
 ![](.4_7_Covariance_matrix_images/359e10ad.png)  
 After transforming the data, you can compute the standard **Euclidian distance** from the point z to the **origin**.
 ![](.4_7_Covariance_matrix_images/c5254fad.png)    

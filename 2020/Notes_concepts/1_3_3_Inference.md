@@ -1,7 +1,7 @@
 # How does frequentist learn
 
-**<font color='red'>Core: Law of large number and CLT**  
-**<font color='red'>Probability** - relative frequency in long run of repeated trials, expressed as proportion
+**<font color='red'>Core: Law of large number and CLT**</font> 
+**<font color='red'>Probability**</font>  - relative frequency in long run of repeated trials, expressed as proportion
 
 - Learn from **Sampling**   
 - Make educated guess on population - statistical inference
@@ -108,7 +108,7 @@ Inferential statistics have **two main uses**:
 - Sampling error (think about repeated meansuring) is the difference between a parameter and a corresponding statistic. 
 - Sampling distribution of statistic
 
-**<font color='red'>Sampling ---CLT--- Population**
+**<font color='red'>Sampling ---CLT--- Population**</font> 
 samples can provide information about populations, and that the accuracy of this information increases with an increase in the samples.
 ### Law of large numbers/Central Limit Theorem (CLT) - MEAN
 ![](.1_Statistical_images/95bc2583.png)

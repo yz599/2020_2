@@ -39,7 +39,7 @@ Project feature to axis to maximize variation
 ![](.6_Feature_projection_images/137d2a2d.png)
 
 ## PCA whitening
-![](.6_Feature_projection_images/048ea736.png)
+![](.6_Feature_projection_images/eb1e1d0c.png)
 
 # 2. LDA - Supervised
 >find projection to a line such that samples from
@@ -64,4 +64,5 @@ the means** after projection:
 ## 2.2 Compare with PCA
 ![](.6_Feature_projection_images/2ca88f19.png)
 
+# Eigen face  
 # 3. SVD
