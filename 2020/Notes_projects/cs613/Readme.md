@@ -7,7 +7,7 @@ Linear regression (normal equation and gradient descent)
 
 
 Homework #2: 
-Entropy, Information gain and Navie Bayesian classifier, Logistic regression, Decision Tree ID3
+Entropy, Information gain and Naive Bayesian classifier, Logistic regression, Decision Tree ID3
 
 
 Homework #3:
